@@ -5,6 +5,7 @@ class Options:
         self.random_state = 1
 
         # data related
+
         self.col_names = ['age', 'sex', 'marital_status', 'occupation', 'education', 'med_prep_by', 'medication',
                           'know_reason', 'know_dosage', 'familiar_timing',
                           'take_regurarly', 'know_med', 'forget_med', 'untroubled_after_dose', 'stop_med_feel_better',

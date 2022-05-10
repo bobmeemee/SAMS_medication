@@ -30,19 +30,23 @@ class DecisionTreeModel(Model):
         super().__init__(data)
         self.options = options
 
-        X, y = make_imbalance(
-            data[options.feature_col],
-            data[options.target_col],
-            sampling_strategy={0: 25, 1: 50, 2: 50},
-            random_state=options.random_state,
-        )
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, train_size=options.train_size,
-                                                                                random_state=options.random_state)
+    #    X, y = make_imbalance(
+    #        data[options.feature_col],
+    #        data[options.target_col],
+    #        sampling_strategy={0: 25, 1: 50, 2: 50},
+    #        random_state=options.random_state,
+    #    )
+        X = data[options.feature_col]  # Features
+        y = data[options.target_col]
 
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, train_size=options.train_size,
+                                                                                random_state=options.random_state,
+                                                                                stratify=y)
         # Create Decision Tree classifer object
         # https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
         self.clf = DecisionTreeClassifier(criterion=self.options.criterion, max_depth=self.options.max_depth,
-                                          max_features=self.options.max_features, splitter=self.options.splitter)
+                                          max_features=self.options.max_features, splitter=self.options.splitter,
+                                          random_state=options.random_state)
 
     # abstract override
     def scale_model(self, scaler):
@@ -96,6 +100,7 @@ class DecisionTreeModel(Model):
 
     # count amount of labels in prediction and actual amount of labels
     # used for evaluating test/train size
+    # irrelevant now, just use stratify in data splitter
     def count_test_split(self, toPrint: bool):
         y_pred = self.clf.predict(self.X_test)
         resultLabels = countLabels(y_pred)

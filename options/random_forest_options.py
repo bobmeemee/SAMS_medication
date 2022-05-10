@@ -6,7 +6,9 @@ class RandomForestOptions(Options):
         super().__init__()
 
         # data options
-        self.train_size = 0.66
+        self.train_size = 0.5
+
+        # model options
         self.balancedRFC = True  # bool
 
         # hyperparameters

@@ -34,7 +34,7 @@ def train_size_variable(start, step, stop, d, opt):
 
 
 if __name__ == '__main__':
-    options = RandomForestOptions()
+    options = DecisiontreeOptions()
 
     # load and prepare data
     data = loadData(options.col_names)
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     # countResultSpread(data, options.target_col)
 
     # train model
-    model = RandomForestModel(data, options)
+    model = DecisionTreeModel(data, options)
 
     scaler = StandardScaler()
     model.scale_model(scaler)

@@ -20,7 +20,8 @@ class RandomForestModel(Model):
         X = data[options.feature_col]  # Features
         y = data[options.target_col]
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, train_size=options.train_size,
-                                                                                random_state=options.random_state)
+                                                                                random_state=options.random_state,
+                                                                                stratify=y)
         if options.balancedRFC:
             self.clf = BalancedRandomForestClassifier(criterion=self.options.criterion,
                                                       n_estimators=self.options.n_estimators,
