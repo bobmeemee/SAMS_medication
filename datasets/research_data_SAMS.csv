@@ -1,0 +1,430 @@
+﻿age;sex;marital status;Education;Occupation;Medication preparation by;medication;SAMS_item1;SAMS_item2;SAMS_item3;SAMS_item4;SAMS_item5;SAMS_item6;SAMS_item7;SAMS_item8;SAMS_item9;SAMS_item10;SAMS_item11;SAMS_item12;SAMS_item13;SAMS_item14;SAMS_item15;SAMS_item16;SAMS_item17;SAMS_item18;Sum_SAMS items 1 till 18
+18;male;single; General Certificate of Secondary Education (German Realschule);unemployed;Patient himself/herself;1;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;2;0;0;3
+19;female;single;German Abitur (qualifying for university admission or matriculation);employed;Patient himself/herself;3;0;0;0;0;0;0;3;0;0;0;0;0;0;0;0;0;0;0;3
+20;female;single;German Abitur (qualifying for university admission or matriculation);employed;Patient himself/herself;#;1;3;0;4;0;0;4;4;0;0;0;0;0;0;0;0;0;0;16
+20;male;single;no graduation;employed;Caregiver;1;0;0;0;0;0;1;1;0;0;0;0;0;0;1;0;0;0;0;3
+23;male;single;lower education level (German Hauptschule);employed;no drugs;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+24;male;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;#;0;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;2
+25;female;single;no graduation;employed;Caregiver;3;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;2
+26;male;single;university degree;employed;Patient himself/herself;1;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;0;0;0;2
+26;female;single;no graduation;employed;Caregiver;3;3;1;1;0;1;1;1;1;2;0;0;0;0;1;0;1;1;0;14
+27;male;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;2;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;1
+27;male;single;university degree;unemployed;#;1;0;0;0;0;0;1;2;0;0;0;0;0;0;2;0;0;0;2;7
+27;male;single;German Abitur (qualifying for university admission or matriculation);employed;Patient himself/herself;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+27;male;single;German Abitur (qualifying for university admission or matriculation);unemployed;Patient himself/herself;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+27;male;single;lower education level (German Hauptschule);employed;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+27;male;single;no graduation;unemployed;Caregiver;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+28;female;single;lower education level (German Hauptschule);employed;Caregiver;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+28;female;single;lower education level (German Hauptschule);employed;Patient himself/herself;2;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+29;female;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0;2;4
+29;female;single; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;1;0;0;0;1;0;2;0;0;0;0;0;0;0;2;0;2;0;0;7
+29;female;single;lower education level (German Hauptschule);employed;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+30;female;single;no graduation;unemployed;Caregiver;6;4;4;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;12
+31;male;single; General Certificate of Secondary Education (German Realschule);unemployed;Patient himself/herself;4;2;1;1;2;2;1;1;2;1;0;0;1;1;1;1;2;1;1;21
+31;female;single;German Abitur (qualifying for university admission or matriculation);employed;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+31;male;#;lower education level (German Hauptschule);employed;Patient himself/herself;3;0;0;0;0;0;1;0;4;4;4;4;4;4;4;4;4;0;4;41
+31;female;single;no graduation;unemployed;Caregiver;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+31;male;single;no graduation;employed;Caregiver;6;1;4;1;0;3;2;3;0;0;2;0;0;0;1;1;1;0;0;19
+32;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;3;0;0;0;0;0;0;3;0;0;0;0;0;0;0;0;0;0;0;3
+32;male;single; General Certificate of Secondary Education (German Realschule);employed;no drugs;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+32;male;widowed or divorced;lower education level (German Hauptschule);employed;Patient himself/herself;1;0;0;0;0;0;1;4;4;3;0;2;1;0;1;1;1;1;3;22
+33;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;8;0;0;0;0;0;1;4;0;0;1;0;0;0;0;0;0;0;0;6
+33;male;single; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+33;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;1;0;1;1;1;2;3;0;0;0;1;0;0;1;1;2;0;1;15
+33;female;widowed or divorced;university degree;employed;Patient himself/herself;4;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;1;0;0;3
+33;female;single;university degree;unemployed;Patient himself/herself;4;0;1;0;0;0;2;0;0;1;0;1;0;0;1;1;1;0;0;8
+33;female;single;university degree;unemployed;Patient himself/herself;1;0;0;0;0;0;0;0;0;0;0;2;0;0;0;0;0;0;0;2
+33;male;single;university degree;unemployed;Nursing or others;2;2;3;2;3;2;2;3;2;1;2;2;3;2;2;2;2;1;2;38
+33;male;single;no graduation;unemployed;Nursing or others;3;4;4;1;0;4;0;4;0;0;0;0;0;0;0;0;0;0;0;17
+34;female;married; General Certificate of Secondary Education (German Realschule);employed;#;#;0;0;0;0;0;1;3;0;1;0;0;0;0;0;0;0;0;1;6
+34;male;married; General Certificate of Secondary Education (German Realschule);employed;Nursing or others;6;0;0;0;0;0;1;0;0;0;0;0;0;0;1;1;1;0;0;4
+34;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;10;0;3;1;0;0;1;0;0;1;0;1;1;0;1;1;0;0;0;10
+34;female;single;no graduation;employed;Caregiver;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+35;female;widowed or divorced;lower education level (German Hauptschule);employed;#;1;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;2;0;0;6
+35;male;single;lower education level (German Hauptschule);employed;Patient himself/herself;2;0;0;0;0;0;1;4;1;0;0;0;0;0;0;0;0;0;0;6
+36;female;married;university degree;employed;Patient himself/herself;1;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;1;0;0;3
+36;male;single;lower education level (German Hauptschule);employed;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+37;male;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;2;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;1;0;0;3
+38;female;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;1;0;0;0;0;0;1;2;0;0;0;0;0;0;1;0;1;0;0;5
+40;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);unemployed;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+40;male;single;German Abitur (qualifying for university admission or matriculation);unemployed;Patient himself/herself;3;0;0;0;0;0;0;1;0;0;0;1;0;1;0;0;0;1;0;4
+40;male;single;lower education level (German Hauptschule);pensioned;Patient himself/herself;2;0;0;0;0;0;0;3;0;0;0;0;0;0;0;0;0;0;0;3
+41;female;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+41;male;single;university degree;employed;Patient himself/herself;5;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;2;0;0;4
+42;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;3;0;0;0;0;0;0;1;0;0;0;0;4;0;0;0;0;0;0;5
+42;male;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;6;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;2;0;0;4
+42;female;widowed or divorced;lower education level (German Hauptschule);unemployed;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+43;female;married; General Certificate of Secondary Education (German Realschule);employed;#;#;4;4;4;4;4;4;4;0;0;4;4;4;4;4;0;0;4;0;52
+43;female;married;university degree;employed;no drugs;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+43;female;single;university degree;employed;Patient himself/herself;1;0;0;0;0;0;1;1;1;0;0;0;0;1;1;0;0;1;0;6
+44;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;9;0;0;0;0;0;1;1;0;0;0;0;0;0;0;1;1;0;1;5
+44;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+44;female;single; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+44;female;married;university degree;employed;Patient himself/herself;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+45;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;1;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+45;male;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+45;male;married;lower education level (German Hauptschule);employed;Patient himself/herself;0;0;0;0;0;1;1;1;2;2;1;4;4;3;0;2;0;1;0;22
+46;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+46;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;2;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;4;0;0;5
+46;male;single;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;0;0;0;0;0;2;1;0;4;0;2;1;0;2;0;2;0;0;14
+47;male;married; General Certificate of Secondary Education (German Realschule);employed;Caregiver;3;0;0;0;0;0;1;1;0;0;0;1;0;2;0;0;1;0;1;7
+47;male;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;4;0;0;1;1;1;2;1;2;0;0;1;0;0;0;1;0;1;0;11
+47;female;married;German Abitur (qualifying for university admission or matriculation);employed;no drugs;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+47;male;married;lower education level (German Hauptschule);employed;#;#;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+48;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;11;0;1;0;0;0;1;4;1;0;0;0;0;0;0;4;0;0;0;11
+48;male;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;1;0;0;0;0;0;1;4;0;0;0;0;0;0;4;0;0;0;0;9
+48;male;widowed or divorced;university degree;employed;Patient himself/herself;4;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1
+48;male;widowed or divorced;university degree;employed;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+48;female;married;German Abitur (qualifying for university admission or matriculation);unemployed;Patient himself/herself;3;0;0;0;1;0;1;0;0;0;0;0;0;0;1;0;1;0;0;4
+49;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;no drugs;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+49;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;2;0;0;0;1;0;1;1;0;0;0;0;0;0;0;0;0;0;0;3
+49;male;single; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;#;3;3;1;0;1;4;0;0;0;0;0;0;0;0;0;0;3;3;18
+49;female;married;university degree;pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+50;male;married; General Certificate of Secondary Education (German Realschule);pensioned;#;6;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+50;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+51;female;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;6;0;0;0;1;0;2;2;2;0;0;2;0;0;0;2;1;1;0;13
+51;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;2;0;0;4
+51;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;4;0;0;0;0;0;1;1;0;0;0;0;0;0;0;1;0;0;0;3
+51;male;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;3;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;2
+51;male;single;lower education level (German Hauptschule);pensioned;Caregiver;6;0;1;0;0;1;0;1;0;1;0;0;0;0;0;0;0;0;0;4
+51;male;single;lower education level (German Hauptschule);employed;Patient himself/herself;2;0;0;0;0;0;0;2;0;0;0;0;2;0;1;1;1;0;1;8
+52;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;1;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;0;0;0;2
+52;female;married;lower education level (German Hauptschule);unemployed;Patient himself/herself;6;0;0;0;0;0;1;0;0;1;0;0;0;0;1;0;0;0;1;4
+52;male;married;lower education level (German Hauptschule);employed;Patient himself/herself;3;0;0;0;0;0;1;0;0;0;1;0;0;0;0;1;0;0;0;3
+52;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;3;0;0;0;0;0;1;2;2;2;0;1;2;2;0;0;2;1;0;15
+53;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Nursing or others;6;2;3;1;0;3;1;2;0;0;0;0;0;0;0;1;0;0;0;13
+53;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;1
+53;male;married;university degree;employed;Patient himself/herself;1;0;0;0;0;0;0;3;0;0;0;0;0;0;0;0;0;0;0;3
+53;female;married;#;employed;Patient himself/herself;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+53;female;married;lower education level (German Hauptschule);pensioned;Nursing or others;#;1;2;0;0;2;1;3;0;0;0;0;0;0;1;1;1;0;0;12
+53;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+53;male;single;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;0;0;0;0;1;1;0;1;0;0;0;0;0;0;0;0;0;0;3
+54;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);employed;#;#;0;0;1;4;4;0;4;4;2;0;4;4;4;0;4;0;0;0;35
+54;female;married; General Certificate of Secondary Education (German Realschule);unemployed;Patient himself/herself;3;0;0;0;0;0;0;0;0;1;0;1;1;0;0;0;0;0;0;3
+54;female;married; General Certificate of Secondary Education (German Realschule);unemployed;Patient himself/herself;3;0;0;0;0;0;0;0;0;1;0;1;1;0;0;0;0;0;0;3
+54;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;1;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+54;male;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;5;1;1;1;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;4
+54;male;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Nursing or others;4;2;2;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;6
+55;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+55;male;#; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;3;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+55;female;married;university degree;employed;no drugs;#;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+55;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;8;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;0;2
+55;male;married;university degree;employed;Patient himself/herself;5;0;0;0;1;0;1;1;1;0;0;0;0;0;0;1;0;1;0;6
+56;male;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;14;1;1;1;0;3;0;0;0;0;0;0;0;0;0;0;0;0;0;6
+56;female;single;German Abitur (qualifying for university admission or matriculation);employed;Patient himself/herself;1;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+56;male;single;lower education level (German Hauptschule);unemployed;Nursing or others;5;3;3;0;0;3;0;0;0;0;0;0;0;0;0;0;4;4;4;21
+56;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;8;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1
+56;female;single;no graduation;pensioned;Caregiver;4;0;0;0;0;0;0;0;0;0;0;0;0;0;4;4;4;0;0;12
+57;male;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;4;3;1;1;0;1;1;0;1;2;0;0;0;0;2;2;4;0;0;18
+57;male;single;lower education level (German Hauptschule);pensioned;Caregiver;5;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;0;4
+58;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;12;0;0;0;0;0;1;1;0;0;0;0;0;0;0;2;2;0;1;7
+58;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;4;0;0;0;0;0;0;2;0;0;0;0;0;0;2;2;0;0;0;6
+58;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;6;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+58;male;single; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;2;0;0;0;0;0;1;4;0;0;0;0;0;0;0;0;0;0;0;5
+58;female;married;#;employed;Patient himself/herself;9;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+58;female;single;lower education level (German Hauptschule);pensioned;Patient himself/herself;8;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1
+58;male;single;lower education level (German Hauptschule);pensioned;Patient himself/herself;3;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1
+59;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;0;0;1;0;1;0;1;1;0;0;0;0;4
+59;male;married;university degree;employed;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;1;0;0;2
+59;male;single;lower education level (German Hauptschule);employed;Patient himself/herself;10;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+60;male;single; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;0;0;1;0;0;1;0;0;0;0;0;1;1;0;0;4
+60;male;married;university degree;pensioned;Patient himself/herself;7;0;0;0;1;0;1;1;1;0;0;1;2;1;1;0;1;1;0;11
+60;male;married;university degree;employed;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+60;female;widowed or divorced;German Abitur (qualifying for university admission or matriculation);employed;Patient himself/herself;2;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;1;0;0;3
+60;female;married;lower education level (German Hauptschule);employed;Patient himself/herself;4;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;1;5
+60;male;single;lower education level (German Hauptschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+61;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+61;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;5;1;1;1;1;2;2;1;0;2;0;2;1;1;2;2;1;0;0;20
+61;male;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;3;0;0;0;0;0;0;2;0;0;0;0;0;0;1;0;0;0;1;4
+61;female;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;1
+61;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;1
+61;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;10;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+62;male;single; General Certificate of Secondary Education (German Realschule);unemployed;Nursing or others;7;1;2;0;0;0;0;1;3;3;0;0;3;2;0;2;0;2;0;19
+62;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;0;0;0;0;4;0;0;0;0;0;0;0;4
+62;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;2
+62;male;widowed or divorced; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;2;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+62;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;1;1;0;1;0;2;2;0;2;2;1;0;1;4;0;0;17
+62;female;single;university degree;pensioned;Patient himself/herself;10;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;0;0;2
+62;male;widowed or divorced;university degree;pensioned;Patient himself/herself;6;0;0;0;0;0;1;1;0;0;0;0;1;0;0;0;1;0;0;4
+63;male;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;3;0;0;0;0;0;1;1;1;0;0;0;0;0;1;1;1;1;0;7
+63;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;#;3;3;3;0;1;1;0;0;1;0;0;0;0;2;0;0;0;0;14
+63;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;1
+63;female;married;university degree;pensioned;Patient himself/herself;10;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;1
+63;female;married;university degree;pensioned;Patient himself/herself;9;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+63;male;married;university degree;employed;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+63;male;married;university degree;pensioned;Patient himself/herself;2;0;0;0;0;0;1;0;0;0;0;2;1;2;0;0;0;0;1;7
+63;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Nursing or others;7;0;3;0;1;1;0;3;0;0;0;0;2;0;0;0;0;0;0;10
+63;male;married;lower education level (German Hauptschule);employed;Patient himself/herself;7;0;0;0;0;0;1;1;0;0;0;0;0;0;2;0;0;0;0;4
+64;female;married; General Certificate of Secondary Education (German Realschule);employed;Patient himself/herself;7;1;3;0;0;1;1;0;0;0;0;0;0;0;1;0;1;0;0;8
+64;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+64;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+64;male;widowed or divorced;university degree;unemployed;Caregiver;10;4;4;4;0;4;1;0;0;0;0;0;0;0;0;2;3;0;0;22
+64;male;married;university degree;employed;Patient himself/herself;7;1;0;0;0;0;2;1;0;0;0;0;2;0;1;3;3;0;0;13
+64;male;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;1;4;0;0;0;0;0;0;0;0;1;0;0;6
+64;male;married;university degree;employed;Patient himself/herself;1;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+64;male;married;university degree;unemployed;Patient himself/herself;4;0;0;0;0;0;1;1;0;0;0;0;0;0;0;1;0;0;1;4
+64;female;single;#;pensioned;Patient himself/herself;6;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+64;female;widowed or divorced;#;pensioned;Patient himself/herself;#;3;0;0;0;0;2;4;4;4;4;4;4;4;4;4;4;4;1;50
+64;female;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;3;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+64;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;4;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;2;0;0;3
+64;female;married;no graduation;pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+65;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;0;0;0;0;4;0;0;0;0;0;0;0;4
+65;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;10;1;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;2
+65;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;1
+65;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;2;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+65;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;1
+65;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;0;0;0;1;0;0;1;0;0;0;0;0;0;1;0;1;4
+65;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;2;0;0;0;0;0;1;4;0;0;0;0;0;0;0;0;0;4;0;9
+65;male;married;university degree;pensioned;Patient himself/herself;#;1;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;2
+65;male;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;0;0;2
+65;female;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;3;0;0;0;0;0;0;4;3;0;0;0;0;0;0;0;0;0;0;7
+65;male;married;lower education level (German Hauptschule);pensioned;Nursing or others;7;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1
+66;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+66;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;#;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+66;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+66;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;8;3;4;1;0;3;2;1;2;0;0;0;0;0;3;1;3;0;0;23
+66;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;0;1;3
+66;male;married;university degree;pensioned;Patient himself/herself;5;0;0;3;0;0;1;3;0;0;0;0;0;0;1;0;4;0;0;12
+66;female;married;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;8;0;0;0;0;0;0;0;0;0;0;0;0;0;4;4;4;4;4;20
+66;female;married;lower education level (German Hauptschule);pensioned;Caregiver;8;0;0;0;0;0;1;0;0;0;0;0;0;0;1;1;1;0;0;4
+66;male;single;no graduation;employed;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;4;0;0;3;0;0;0;0;7
+67;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;1
+67;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;9;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+67;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;9;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+67;female;married;university degree;pensioned;Caregiver;11;0;0;0;0;0;1;1;1;1;0;0;0;0;0;0;0;0;1;5
+67;female;married;university degree;employed;Patient himself/herself;8;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+67;female;married;university degree;pensioned;Patient himself/herself;4;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;1;0;0;3
+67;male;married;university degree;pensioned;Patient himself/herself;4;0;0;0;0;0;1;0;0;0;0;0;0;1;0;0;1;0;2;5
+67;male;married;university degree;pensioned;Patient himself/herself;7;0;0;0;0;0;2;0;0;0;0;0;0;0;0;1;1;0;0;4
+67;male;married;university degree;pensioned;Patient himself/herself;6;0;0;0;1;0;1;1;0;0;0;4;4;4;3;3;4;4;4;33
+67;male;married;#;#;Patient himself/herself;9;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+67;female;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+67;female;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;4;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+67;male;widowed or divorced;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+67;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;7;1;0;0;0;0;1;0;0;0;0;0;0;0;0;3;2;2;0;9
+68;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;14;0;1;0;1;3;3;0;0;0;0;3;3;0;0;1;0;0;0;15
+68;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Nursing or others;#;2;2;0;0;2;4;4;0;0;0;0;0;2;0;0;0;0;0;16
+68;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Nursing or others;5;0;0;0;4;3;2;2;0;0;0;0;0;0;0;0;0;0;0;11
+68;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;0;0;1;0;0;0;0;1;0;4;0;0;0;4;0;10
+68;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;#;0;0;0;0;0;1;1;1;1;0;0;0;0;0;1;0;0;0;5
+68;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;7;0;0;0;0;0;1;0;0;0;0;0;0;0;0;2;0;0;0;3
+68;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;0;1;0;0;4;4;4;4;4;4;4;4;33
+68;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+68;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;4;1;1;1;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1;5
+68;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;1;4;4;4;4;4;4;4;0;4;4;4;41
+68;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;1;0;0;0;0;0;0;2;0;2;2;0;0;2;0;0;0;9
+68;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+68;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;1;0;0;0;0;0;0;2;0;2;2;0;0;2;0;0;0;9
+68;female;married;university degree;pensioned;Patient himself/herself;3;1;1;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;4
+68;male;married;university degree;pensioned;Caregiver;#;0;0;0;0;0;0;3;0;0;0;4;4;4;4;4;4;4;4;35
+68;male;married;university degree;pensioned;Caregiver;11;1;1;0;0;1;0;1;0;0;0;0;0;0;0;0;0;0;0;4
+68;male;married;university degree;pensioned;Patient himself/herself;6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+68;male;married;university degree;pensioned;Patient himself/herself;2;0;0;0;2;0;0;1;0;2;0;3;3;3;0;0;0;0;0;14
+68;female;widowed or divorced;#;pensioned;Nursing or others;15;1;0;0;0;0;4;0;4;3;4;4;4;4;0;2;0;2;0;32
+68;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;12;1;1;0;0;0;1;4;0;0;0;1;0;0;1;1;1;0;0;11
+68;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;8;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;1;2
+68;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;8;0;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;0;0;2
+68;male;married;lower education level (German Hauptschule);pensioned;Caregiver;7;3;1;1;1;1;1;0;0;1;0;0;0;0;0;0;0;0;0;9
+68;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;5;3;0;0;1;1;2;1;1;0;0;0;3;0;0;0;2;0;0;14
+69;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;7;1;1;0;0;2;1;1;0;0;0;0;1;0;0;1;0;0;0;8
+69;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;4;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;2
+69;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Nursing or others;15;1;1;1;0;1;1;2;1;0;0;0;0;0;1;0;0;0;0;9
+69;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;1;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;3
+69;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;9;0;0;0;0;0;1;0;0;0;0;0;0;0;1;2;1;0;1;6
+69;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;0;2
+69;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+69;male;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;14;2;2;1;0;2;1;1;4;2;0;3;0;1;1;1;1;1;0;23
+69;female;widowed or divorced;university degree;pensioned;Patient himself/herself;3;0;0;0;1;0;0;1;0;1;0;1;1;0;0;0;0;1;0;6
+69;female;widowed or divorced;university degree;pensioned;Patient himself/herself;4;0;0;0;0;0;2;0;0;0;0;0;0;0;0;2;0;0;0;4
+69;male;married;university degree;pensioned;Patient himself/herself;2;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;4;8
+69;male;widowed or divorced;university degree;pensioned;Patient himself/herself;2;1;0;0;1;0;2;1;0;0;0;0;0;0;0;2;0;0;0;7
+69;female;widowed or divorced;#;pensioned;Patient himself/herself;5;0;0;0;0;0;2;0;0;0;0;0;0;0;0;2;0;0;0;4
+69;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;11;3;4;0;1;3;1;0;0;0;0;0;0;0;0;1;0;0;0;13
+69;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;9;1;1;1;0;0;1;4;0;1;0;0;0;0;0;1;0;0;0;10
+69;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+69;male;single;lower education level (German Hauptschule);pensioned;Patient himself/herself;3;3;0;0;0;0;0;1;1;0;0;0;1;1;0;0;0;1;0;8
+70;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;4;0;0;0;0;0;1;0;0;4;0;0;0;0;1;0;0;0;0;6
+70;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;1
+70;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+70;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+70;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;15;0;0;0;0;0;2;0;0;0;0;0;0;0;2;2;2;0;0;8
+70;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;10;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;0;0;0;2
+70;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;1;1;1;1;1;1;1;2;0;1;1;2;0;1;2;0;2;18
+70;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;1;1;1;0;1;0;4;2;0;1;4;3;3;4;4;29
+70;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+70;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;1;0;0;1;1;1;0;1;0;0;1;0;1;1;1;0;0;9
+70;female;married;university degree;pensioned;Caregiver;8;0;1;0;0;0;1;1;0;0;0;0;0;1;1;0;0;1;1;7
+70;female;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;1;0;1;1;0;0;1;1;0;1;1;1;2;10
+70;male;married;university degree;pensioned;Caregiver;12;0;0;0;1;0;1;0;0;0;0;0;0;0;0;1;0;0;0;3
+70;male;married;university degree;pensioned;Caregiver;9;0;0;0;0;0;2;0;0;0;0;0;0;0;0;1;0;0;0;3
+70;male;married;university degree;pensioned;Patient himself/herself;8;0;1;1;0;0;1;1;0;0;0;0;0;0;0;0;1;0;0;5
+70;male;#;university degree;pensioned;Patient himself/herself;3;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;0;0;0;2
+70;male;widowed or divorced;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;3;0;0;0;0;1;1;4;3;1;0;4;0;0;0;2;2;3;0;21
+70;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+70;female;widowed or divorced;lower education level (German Hauptschule);employed;Patient himself/herself;6;0;0;0;1;1;1;0;1;2;0;0;2;2;0;0;0;1;2;13
+70;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;0;0;0;0;0;1;2;0;1;0;0;1;2;0;0;0;1;1;9
+70;male;married;lower education level (German Hauptschule);pensioned;Caregiver;#;1;0;0;0;0;1;4;0;1;0;4;1;0;0;2;1;0;1;16
+71;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;15;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;1
+71;female;married;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;12;0;0;0;0;0;1;4;1;0;0;1;0;0;1;1;1;0;1;11
+71;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;14;2;2;3;0;2;1;1;1;1;0;0;0;0;0;0;0;0;4;17
+71;male;widowed or divorced;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;15;2;0;0;0;2;3;1;0;0;0;0;0;0;2;2;2;0;0;14
+71;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;7;0;0;0;0;1;0;1;0;0;0;4;0;0;4;0;3;0;0;13
+71;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;5;1;0;0;0;1;1;0;0;0;0;0;0;0;1;0;0;0;0;4
+71;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;9;3;3;1;0;3;0;3;1;4;4;0;0;0;0;0;0;0;0;22
+72;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;#;0;4;1;0;3;1;2;0;0;0;0;0;0;0;4;0;0;0;15
+72;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;3;0;0;0;1;0;0;0;0;0;0;0;0;1;1;0;0;6
+72;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;#;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+72;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;1;0;3
+72;male;married;university degree;pensioned;Caregiver;2;1;3;1;1;4;1;0;0;0;0;0;0;0;0;0;0;0;4;15
+72;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;9;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+72;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;7;1;1;1;0;1;0;0;0;0;0;0;0;0;0;2;0;0;0;6
+72;male;married;lower education level (German Hauptschule);employed;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;2
+73;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;#;1;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;2;5
+73;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;10;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;4;0;0;5
+73;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;2
+73;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;3;0;0;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;3
+73;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;2;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+73;male;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Nursing or others;#;0;0;0;0;0;1;4;0;0;0;0;0;0;0;1;0;0;0;6
+73;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;1;0;0;0;1;1;1;0;0;0;0;0;0;0;0;1;0;0;5
+73;female;married;university degree;pensioned;Patient himself/herself;10;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+73;male;married;university degree;pensioned;Caregiver;10;1;2;0;0;0;2;1;0;0;0;0;0;0;0;0;0;0;0;6
+73;male;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;2
+73;male;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+73;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+73;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;4;0;0;0;0;0;1;3;0;0;0;0;0;2;0;0;2;0;0;8
+73;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;3;0;0;0;0;0;1;0;1;0;0;0;0;0;0;0;1;0;0;3
+74;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+74;female;married;university degree;pensioned;Caregiver;7;0;0;0;0;0;4;4;0;0;0;0;0;0;4;4;4;0;0;20
+74;male;married;university degree;pensioned;Patient himself/herself;14;1;1;1;1;1;1;0;0;0;0;0;0;0;0;1;2;1;1;11
+74;male;married;university degree;pensioned;Patient himself/herself;5;0;1;0;0;2;2;0;0;0;1;0;0;0;0;2;1;0;1;10
+74;male;married;university degree;pensioned;Patient himself/herself;5;0;1;0;0;2;2;0;0;0;1;0;0;0;0;2;1;0;1;10
+74;male;widowed or divorced;university degree;pensioned;Patient himself/herself;4;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;0;0;0;2
+74;male;married;university degree;pensioned;Patient himself/herself;11;1;0;0;1;0;1;1;0;0;0;0;0;1;0;1;1;0;1;8
+74;male;married;university degree;pensioned;Patient himself/herself;8;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;2;0;0;4
+74;male;widowed or divorced;university degree;pensioned;Patient himself/herself;#;2;3;0;0;1;1;1;0;0;0;0;0;0;0;2;0;0;0;10
+74;male;married;university degree;pensioned;pharmacist;7;2;0;0;0;3;0;1;0;2;0;0;0;0;0;0;0;0;0;8
+74;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;5;0;0;0;0;0;0;3;0;0;0;0;0;0;0;0;0;0;0;3
+74;female;married;lower education level (German Hauptschule);pensioned;Caregiver;4;0;0;0;0;0;0;0;1;1;0;2;1;1;0;0;0;1;0;7
+74;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+74;male;married;lower education level (German Hauptschule);pensioned;Caregiver;8;3;4;3;2;4;3;3;2;3;0;0;0;0;0;2;2;0;0;31
+74;male;married;lower education level (German Hauptschule);pensioned;Caregiver;5;2;1;1;0;3;0;4;0;0;0;0;0;0;0;0;0;0;0;11
+75;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;9;1;0;0;0;0;2;1;0;0;0;0;0;0;0;0;0;0;0;4
+75;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+75;male;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;7;0;0;0;1;0;2;4;0;0;0;0;0;0;0;2;2;0;0;11
+75;male;married; General Certificate of Secondary Education (German Realschule);#;Caregiver;7;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+75;female;married;university degree;pensioned;Patient himself/herself;#;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+75;female;married;university degree;pensioned;Patient himself/herself;10;1;1;1;1;1;1;0;0;0;0;0;0;0;0;0;0;0;0;6
+75;female;married;university degree;pensioned;Patient himself/herself;6;0;1;0;0;0;1;2;0;0;0;0;0;0;0;1;0;0;0;5
+75;male;married;university degree;pensioned;Patient himself/herself;10;0;0;0;0;0;0;0;0;0;0;0;0;0;4;0;0;0;0;4
+75;male;married;university degree;pensioned;Patient himself/herself;8;2;3;2;0;3;1;1;0;0;0;0;0;0;0;0;0;0;0;12
+75;male;married;university degree;pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;1;0;2;0;0;0;0;0;0;0;0;3
+75;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+75;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1
+75;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;3;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1
+75;male;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;0;0;0;0;0;2;0;0;0;0;0;0;0;4;0;0;0;0;6
+75;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;14;0;0;0;0;0;1;0;0;3;0;0;0;0;0;0;0;0;0;4
+75;male;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;5;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;2
+75;male;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1
+76;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;5;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;2
+76;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;5;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+76;male;single; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;10;0;0;0;0;0;1;1;0;1;0;0;1;1;1;2;1;1;1;11
+76;female;widowed or divorced;university degree;pensioned;Nursing or others;9;0;0;0;0;0;3;0;0;0;0;2;0;0;3;3;3;0;0;14
+76;female;widowed or divorced;university degree;pensioned;Patient himself/herself;15;0;0;0;1;1;1;1;1;1;0;1;1;1;0;0;2;0;2;13
+76;male;married;university degree;pensioned;Nursing or others;4;0;4;0;0;0;2;0;4;4;0;0;0;0;2;2;2;0;0;20
+76;male;single;university degree;pensioned;Patient himself/herself;21;1;1;0;0;0;1;4;0;0;1;0;0;0;0;0;2;0;1;11
+76;male;married;university degree;pensioned;Patient himself/herself;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+76;male;married;university degree;pensioned;Patient himself/herself;6;0;0;0;0;0;4;0;4;4;4;4;4;4;4;4;4;4;4;48
+76;male;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+76;male;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;1;0;1;0;0;0;0;0;0;2;0;0;3;7
+76;male;widowed or divorced;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;1;4;4;4;4;4;4;0;0;0;0;4;4;33
+76;male;married;university degree;pensioned;Patient himself/herself;6;0;0;0;0;0;1;0;1;0;0;0;0;0;0;0;0;0;1;3
+76;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;5;1;0;0;0;1;0;0;1;0;0;0;1;0;0;0;0;0;0;4
+76;female;married;lower education level (German Hauptschule);pensioned;Caregiver;8;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;0;0;2
+76;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;5;1;1;0;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4
+76;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+76;male;married;lower education level (German Hauptschule);pensioned;Nursing or others;8;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;2
+76;male;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;13;0;1;1;0;1;1;1;0;0;0;0;0;0;0;0;0;0;1;6
+77;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;5;0;2;0;0;0;1;0;0;0;0;0;0;0;0;1;0;0;0;4
+77;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+77;female;married;university degree;pensioned;Patient himself/herself;6;1;1;0;0;0;1;0;1;4;0;1;2;1;0;1;1;0;0;14
+77;female;married;university degree;pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+77;male;married;university degree;pensioned;Caregiver;#;0;0;0;0;1;1;2;0;1;0;0;0;0;0;0;1;0;2;8
+77;male;married;university degree;pensioned;Caregiver;10;1;1;0;0;2;3;3;0;0;0;0;0;0;0;3;1;0;0;14
+77;male;married;university degree;pensioned;Caregiver;4;1;4;4;1;0;3;0;0;0;0;0;0;0;2;4;4;0;0;23
+77;female;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;6;1;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;5
+77;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;#;0;0;0;1;2;2;2;0;0;0;0;0;0;0;0;0;0;2;9
+77;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;4;0;0;0;0;1;0;4;0;0;0;0;0;0;0;0;0;0;1;6
+77;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+77;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;5;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+77;male;widowed or divorced;no graduation;pensioned;Nursing or others;#;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+78;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;#;#;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+78;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;13;3;0;0;1;1;2;1;0;1;0;0;0;0;0;0;2;0;0;11
+78;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;2
+78;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;8;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+78;male;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;2
+78;male;married;university degree;pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+78;male;married;university degree;pensioned;Patient himself/herself;3;0;0;0;0;0;0;3;0;0;0;0;0;0;0;0;0;0;0;3
+78;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;10;0;0;0;0;0;2;4;0;0;0;0;0;0;4;4;1;4;4;23
+78;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;12;0;0;0;0;0;1;0;0;0;0;1;0;0;0;0;1;0;1;4
+78;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;9;0;1;2;1;2;1;0;4;0;4;4;4;0;0;0;0;0;0;23
+78;female;widowed or divorced;lower education level (German Hauptschule);pensioned;pharmacist;3;0;4;1;0;4;0;4;0;0;0;0;0;0;0;0;0;0;0;13
+78;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;10;0;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;3
+78;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;3;3;3;3;3;1;0;0;0;0;0;0;0;0;0;0;0;1;17
+78;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;7;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+78;female;widowed or divorced;no graduation;pensioned;Patient himself/herself;#;0;1;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;5
+79;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;#;3;1;3;0;1;1;0;0;0;0;0;0;0;0;0;0;0;1;10
+79;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+79;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;4;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+79;female;widowed or divorced;university degree;pensioned;Patient himself/herself;4;0;0;0;0;0;2;0;0;0;0;1;1;0;0;2;2;0;0;8
+79;female;widowed or divorced;university degree;pensioned;Patient himself/herself;#;1;1;1;0;1;0;1;0;0;0;0;0;0;2;0;0;1;1;9
+79;male;married;university degree;pensioned;Patient himself/herself;8;3;4;4;0;1;1;4;0;0;0;0;1;1;0;2;0;1;0;22
+79;male;#;university degree;pensioned;Patient himself/herself;8;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+79;male;married;university degree;pensioned;Patient himself/herself;7;1;0;0;0;1;1;1;0;0;0;1;0;0;0;0;0;0;0;5
+79;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Caregiver;8;0;0;0;0;0;1;4;0;0;0;0;0;0;0;0;1;0;0;6
+79;female;married;lower education level (German Hauptschule);pensioned;Nursing or others;15;1;1;0;1;0;1;0;0;0;0;0;0;0;0;0;0;1;1;6
+79;male;married;lower education level (German Hauptschule);pensioned;Caregiver;2;0;4;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;8
+79;male;married;lower education level (German Hauptschule);pensioned;Caregiver;7;0;0;0;0;3;0;3;0;0;0;0;0;0;0;0;0;0;0;6
+79;male;married;no graduation;pensioned;Patient himself/herself;7;0;0;0;0;0;1;0;0;0;0;0;0;0;4;0;2;0;0;7
+80;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;5;0;0;0;0;0;2;0;0;0;0;0;0;0;1;3;3;0;0;9
+80;male;widowed or divorced;university degree;pensioned;Caregiver;14;0;4;0;1;4;1;4;0;0;0;0;0;0;0;1;3;0;0;18
+80;male;married;university degree;pensioned;Patient himself/herself;8;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+80;male;married;university degree;pensioned;Patient himself/herself;6;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;0;0;0;2
+80;male;married;university degree;pensioned;Patient himself/herself;6;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;2
+80;male;married;university degree;pensioned;Patient himself/herself;3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+80;male;married;university degree;pensioned;Patient himself/herself;3;0;0;0;0;0;1;0;0;0;0;0;0;0;0;2;0;0;0;3
+80;male;married;lower education level (German Hauptschule);pensioned;Caregiver;4;0;0;0;1;0;1;1;0;0;0;1;0;0;0;0;0;0;0;4
+80;male;married;lower education level (German Hauptschule);pensioned;Caregiver;2;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;1;0;0;3
+80;male;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;11;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+81;female;#; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;8;3;4;1;0;1;0;0;0;1;0;0;0;0;0;0;0;0;0;10
+81;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;7;3;3;3;0;3;0;0;0;0;0;0;0;0;0;0;0;0;0;12
+81;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;10;4;4;4;4;4;3;4;4;4;4;4;4;4;4;4;4;4;4;71
+81;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;20;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1
+81;male;married;university degree;pensioned;Patient himself/herself;4;1;0;1;1;0;1;1;0;0;0;1;1;0;1;0;0;0;0;8
+81;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;9;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+81;male;married;lower education level (German Hauptschule);pensioned;Caregiver;11;0;0;1;1;0;1;0;0;0;0;3;2;2;0;0;2;0;0;12
+82;female;single; General Certificate of Secondary Education (German Realschule);pensioned;Nursing or others;10;4;4;4;4;2;2;1;0;4;0;4;2;3;4;4;3;4;0;49
+82;male;married; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;8;0;0;0;0;0;1;0;0;1;0;0;0;0;0;1;0;0;0;3
+82;male;married;university degree;pensioned;Caregiver;#;1;1;1;0;1;1;2;0;0;0;0;0;0;0;0;0;0;1;8
+82;male;married;university degree;pensioned;Patient himself/herself;8;0;0;0;0;0;1;0;0;0;0;0;0;0;0;2;0;0;0;3
+82;male;married;university degree;pensioned;Patient himself/herself;2;0;0;1;1;0;1;1;0;0;0;0;0;0;0;1;1;0;0;6
+82;male;married;university degree;pensioned;Patient himself/herself;7;1;0;0;0;0;1;0;0;0;0;0;0;0;0;1;2;0;0;5
+82;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;4;1;1;1;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;5
+82;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;3;0;0;0;1;0;1;1;1;0;0;0;0;0;3;3;3;0;0;13
+82;male;married;German Abitur (qualifying for university admission or matriculation);pensioned;Patient himself/herself;3;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;1;0;0;3
+82;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;8;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+82;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+82;female;married;lower education level (German Hauptschule);pensioned;Patient himself/herself;2;0;0;0;0;0;1;0;0;0;0;3;0;0;0;0;4;0;0;8
+83;male;married;university degree;pensioned;Caregiver;13;2;2;2;1;2;0;0;0;0;0;0;0;0;0;0;0;0;0;9
+83;male;married;university degree;pensioned;Caregiver;13;4;4;4;0;4;1;1;0;0;0;4;0;4;0;0;0;0;0;26
+83;male;married;university degree;pensioned;Caregiver;2;0;0;0;0;0;2;1;0;0;0;0;0;0;0;1;0;0;0;4
+83;male;widowed or divorced;German Abitur (qualifying for university admission or matriculation);pensioned;Caregiver;11;4;4;4;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;14
+83;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Nursing or others;#;1;3;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;1;6
+83;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Patient himself/herself;#;0;1;0;0;0;2;0;0;0;0;0;0;0;0;0;1;0;0;4
+84;female;married; General Certificate of Secondary Education (German Realschule);pensioned;Caregiver;6;3;3;3;0;2;2;1;0;0;0;0;0;0;0;1;0;0;0;15
+84;male;married;university degree;pensioned;Patient himself/herself;5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;2
+84;female;married;lower education level (German Hauptschule);pensioned;Caregiver;8;1;1;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;3
+84;male;married;lower education level (German Hauptschule);pensioned;Caregiver;3;0;0;0;1;0;4;4;1;1;0;0;0;0;3;3;3;0;0;20
+85;female;widowed or divorced;lower education level (German Hauptschule);pensioned;Caregiver;7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1
+87;female;widowed or divorced; General Certificate of Secondary Education (German Realschule);pensioned;Patient himself/herself;7;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;4
+87;male;widowed or divorced;university degree;pensioned;Patient himself/herself;10;0;0;0;0;0;0;0;0;0;0;0;4;4;0;0;0;0;0;8
+90;female;widowed or divorced;no graduation;pensioned;Patient himself/herself;8;4;4;4;0;4;0;4;0;0;0;0;0;0;0;0;0;0;0;20
