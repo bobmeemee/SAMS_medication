@@ -1,5 +1,6 @@
+import numpy as np
+import pandas as pd
 from matplotlib import pyplot as plt
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 from models.DecisionTreeModel import DecisionTreeModel
@@ -40,9 +41,15 @@ if __name__ == '__main__':
     data = loadData(options.col_names)
     data = dropIncomplete(data)
     data = columnsToIntegers(data, options.notIntegerColumns)
+
+    # categorize last column according to SAMS research
+    data['total_score_cat'] = pd.cut(
+        x=data['total_score'],
+        bins=[-1, 0, 11, np.inf],
+        labels=[0, 1, 2],
+    )
+
     print(data[options.target_col].value_counts())
-    # train_size_variable(40, 2, 98, data, options)
-    # countResultSpread(data, options.target_col)
 
     # train model
     model = DecisionTreeModel(data, options)

@@ -121,7 +121,8 @@ class DecisionTreeModel(Model):
 
         for depth in range(1, max_depth):
             clf = DecisionTreeClassifier(criterion=self.options.criterion, max_depth=depth,
-                                         max_features=self.options.max_features, splitter=self.options.splitter)
+                                         max_features=self.options.max_features, splitter=self.options.splitter,
+                                         random_state=self.options.random_state)
 
             clf.fit(self.X_train, self.y_train)
             train_pred = clf.predict(self.X_train)

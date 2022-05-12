@@ -6,12 +6,12 @@ class DecisiontreeOptions(Options):
         super().__init__()
 
         # data options
-        self.train_size = 0.6
+        self.train_size = 0.4
 
         # hyperparameters
         self.criterion = "gini"
         self.max_depth = 2
-        self.splitter = "best"
+        self.splitter = "random"
         self.max_features = "auto"
         self.min_samples_split = None
         self.min_samples_leaf = None
