@@ -4,14 +4,47 @@ from matplotlib import pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
 from models.DecisionTreeModel import DecisionTreeModel
+from models.LogisticRegressionModel import LogisticRegressionModel
 from models.NearestNeighborModel import NearestNeighborModel
 from models.RandomForest import RandomForestModel
 
 from options.decision_tree_options import DecisiontreeOptions
+from options.logistic_regression_options import LogisticRegressionOptions
 from options.nearest_neighbor_options import NearestNeighborOptions
 from options.random_forest_options import RandomForestOptions
 
 from utils.utils import loadData, dropIncomplete, columnsToIntegers, countLabels
+
+
+if __name__ == '__main__':
+    options = LogisticRegressionOptions()
+
+    # load and prepare data
+    data = loadData(options.col_names)
+    data = dropIncomplete(data)
+    data = columnsToIntegers(data, options.notIntegerColumns)
+
+    # categorize last column according to SAMS research
+    data['total_score_cat'] = pd.cut(
+        x=data['total_score'],
+        bins=[-1, 0, 11, np.inf],
+        labels=[0, 1, 2],
+    )
+
+    print(data[options.target_col].value_counts())
+
+    # build model
+    model = LogisticRegressionModel(data, options)
+
+    # scale model 0-1
+    scaler = StandardScaler()
+    model.scale_model(scaler)
+
+    # train model
+    model.train_model()
+
+    # test model accuracy
+    model.test_model(isMultilabel=True)
 
 
 # only for rfc, maybe to other class?
@@ -36,34 +69,3 @@ def train_size_variable(start, step, stop, d, opt):
     ax1.plot(range(start, stop, step), test_l, color='tab:orange')
     ax1.set_title('Train vs test label amtount with variable test')
     plt.show()
-
-
-if __name__ == '__main__':
-    options = NearestNeighborOptions()
-
-    # load and prepare data
-    data = loadData(options.col_names)
-    data = dropIncomplete(data)
-    data = columnsToIntegers(data, options.notIntegerColumns)
-
-    # categorize last column according to SAMS research
-    data['total_score_cat'] = pd.cut(
-        x=data['total_score'],
-        bins=[-1, 0, 11, np.inf],
-        labels=[0, 1, 2],
-    )
-
-    print(data[options.target_col].value_counts())
-
-    # train model
-    model = NearestNeighborModel(data, options)
-
-    # scale model 0-1
-    scaler = StandardScaler()
-    model.scale_model(scaler)
-
-    # train on data
-    model.train_model()
-
-    # test model accuracy
-    model.test_model(isMultilabel=True)
