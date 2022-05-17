@@ -3,7 +3,6 @@ from matplotlib import pyplot as plt
 import pandas as pd
 import numpy as np
 
-
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score, classification_report, \
     precision_recall_fscore_support
 from sklearn.model_selection import train_test_split
@@ -69,12 +68,29 @@ class RandomForestModel(Model):
         score = self.clf.score(self.X_test, self.y_test)
         print("Accuray: " + str(score))
         self.confusion_matrix(y_pred)
-        self.f1_score(y_pred)
-        self.sensitivity_score(y_pred)
-        self.specificity_score(y_pred)
+        print('f1_score: ' + str(self.f1_score(y_pred)))
+        print('weighted selectivity: ' + str(self.sensitivity_score(y_pred)))
+        print('weighted specifity: ' + str(self.specificity_score(y_pred)))
         self.precision_recall_fscore_support(y_pred)
         # print(classification_report(self.y_test, y_pred))
 
+    def confusion_matrix(self, y_pred):
+        cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
+
+        disp = ConfusionMatrixDisplay(confusion_matrix=cfm)
+        disp.plot()
+        plt.show()
+
+    def f1_score(self, y_pred):
+        return f1_score(self.y_test, y_pred, average='weighted')  # what does average mean??
+
+    def sensitivity_score(self, y_pred):
+        return sensitivity_score(self.y_test, y_pred, average='weighted')
+
+    def specificity_score(self, y_pred):
+        return specificity_score(self.y_test, y_pred, average='weighted')
+
+    # only works for 3x3
     def precision_recall_fscore_support(self, y_pred):
         res = []
         for l in [0, 1, 2]:
@@ -84,26 +100,3 @@ class RandomForestModel(Model):
             res.append([l, recall[1], recall[0]])
         res = pd.DataFrame(res, columns=['class', 'sensitivity', 'specificity'])
         print(res)
-
-    def confusion_matrix(self, y_pred):
-        # y_pred = self.clf.predict(self.X_test)
-
-        cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
-
-        disp = ConfusionMatrixDisplay(confusion_matrix=cfm)
-        disp.plot()
-        plt.show()
-
-    def f1_score(self, y_pred):
-        f1score = f1_score(self.y_test, y_pred, average='weighted')  # what does average mean??
-        print('weighted f1_score: ' + str(f1score))
-
-    def sensitivity_score(self, y_pred):
-        sensScore = sensitivity_score(self.y_test, y_pred, average='weighted')
-        print('weighted sensitivity: ' + str(sensScore))
-
-    def specificity_score(self, y_pred):
-        sensScore = specificity_score(self.y_test, y_pred, average='weighted')
-        print('weighted specificity: ' + str(sensScore))
-
-

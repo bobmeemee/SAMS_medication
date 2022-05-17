@@ -2,11 +2,11 @@ class Options:
     def __init__(self):
         # runtime related
         self.device = "cpu"  # idk niet eens gebruikt lol
-        self.random_state = 10
+        self.random_state = 3
 
         # data related
 
-        self.class_weight = None
+        self.class_weight = 'balanced'
 
         self.col_names = ['age', 'sex', 'marital_status', 'occupation', 'education', 'med_prep_by', 'medication',
                           'know_reason', 'know_dosage', 'familiar_timing',

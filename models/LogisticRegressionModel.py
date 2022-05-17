@@ -1,7 +1,8 @@
+import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, precision_recall_fscore_support
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 
@@ -28,7 +29,7 @@ class LogisticRegressionModel(Model):
                                                                                 random_state=options.random_state,
                                                                                 stratify=y)
 
-        self.clf = LogisticRegression(random_state=options.random_state)
+        self.clf = LogisticRegression(random_state=options.random_state, class_weight=options.class_weight)
 
     # not necessary with logistic regression
     def scale_model(self, scaler):
@@ -43,12 +44,22 @@ class LogisticRegressionModel(Model):
 
         y_pred = self.clf.predict(self.X_test)
         self.confusion_matrix(y_pred)
+        self.precision_recall_fscore_support(y_pred)
 
     def confusion_matrix(self, y_pred):
-        # y_pred = self.clf.predict(self.X_test)
-
         cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
 
         disp = ConfusionMatrixDisplay(confusion_matrix=cfm)
+
         disp.plot()
         plt.show()
+
+    def precision_recall_fscore_support(self, y_pred):
+        res = []
+        for i in [0, 1, 2]:
+            prec, recall, _, _ = precision_recall_fscore_support(np.array(self.y_test) == i,
+                                                                 np.array(y_pred) == i,
+                                                                 pos_label=True, average=None)
+            res.append([i, recall[1], recall[0]])
+        res = pd.DataFrame(res, columns=['class', 'recall', 'specificity'])
+        print(res)
