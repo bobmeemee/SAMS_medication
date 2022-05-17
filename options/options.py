@@ -2,7 +2,7 @@ class Options:
     def __init__(self):
         # runtime related
         self.device = "cpu"  # idk niet eens gebruikt lol
-        self.random_state = 1
+        self.random_state = 10
 
         # data related
 
@@ -22,3 +22,7 @@ class Options:
                             'know_reason', 'know_dosage', 'familiar_timing', 'know_med']
 
         self.target_col = 'total_score_cat'
+
+    def set_random_state(self, random_state):
+        self.random_state = random_state
+

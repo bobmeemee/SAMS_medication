@@ -6,14 +6,14 @@ class RandomForestOptions(Options):
         super().__init__()
 
         # data options
-        self.train_size = 0.66
+        self.train_size = 0.75
 
         # model options
         self.balancedRFC = True  # bool
 
         # hyperparameters
         self.criterion = "gini"
-        self.n_estimators = 100
+        self.n_estimators = 1000
         self.max_depth = 6
         self.max_features = "auto"
         self.random_state = None

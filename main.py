@@ -4,9 +4,13 @@ from matplotlib import pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
 from models.DecisionTreeModel import DecisionTreeModel
+from models.NearestNeighborModel import NearestNeighborModel
 from models.RandomForest import RandomForestModel
+
 from options.decision_tree_options import DecisiontreeOptions
+from options.nearest_neighbor_options import NearestNeighborOptions
 from options.random_forest_options import RandomForestOptions
+
 from utils.utils import loadData, dropIncomplete, columnsToIntegers, countLabels
 
 
@@ -35,7 +39,7 @@ def train_size_variable(start, step, stop, d, opt):
 
 
 if __name__ == '__main__':
-    options = DecisiontreeOptions()
+    options = NearestNeighborOptions()
 
     # load and prepare data
     data = loadData(options.col_names)
@@ -52,7 +56,7 @@ if __name__ == '__main__':
     print(data[options.target_col].value_counts())
 
     # train model
-    model = DecisionTreeModel(data, options)
+    model = NearestNeighborModel(data, options)
 
     # scale model 0-1
     scaler = StandardScaler()
