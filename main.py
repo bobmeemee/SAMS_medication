@@ -54,9 +54,11 @@ if __name__ == '__main__':
     # train model
     model = DecisionTreeModel(data, options)
 
+    # scale model 0-1
     scaler = StandardScaler()
     model.scale_model(scaler)
 
+    # train on data
     model.train_model()
 
     # test model accuracy

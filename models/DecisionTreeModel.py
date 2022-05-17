@@ -1,14 +1,16 @@
 import pydotplus
 import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
 from io import StringIO
 from IPython.display import Image
+from imblearn.metrics import sensitivity_score, specificity_score
 
 from sklearn import metrics
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score, precision_recall_fscore_support
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
-
-from imblearn.datasets import make_imbalance
 
 from models.Model import Model
 from options.decision_tree_options import DecisiontreeOptions
@@ -46,7 +48,7 @@ class DecisionTreeModel(Model):
         # https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
         self.clf = DecisionTreeClassifier(criterion=self.options.criterion, max_depth=self.options.max_depth,
                                           max_features=self.options.max_features, splitter=self.options.splitter,
-                                          random_state=options.random_state)
+                                          random_state=options.random_state, class_weight=self.options.class_weight)
 
     # abstract override
     def scale_model(self, scaler):
@@ -63,18 +65,12 @@ class DecisionTreeModel(Model):
         # Train Decision Tree Classifer
         self.clf = self.clf.fit(self.X_train, self.y_train)
 
-    def confusion_matrix(self):
-        y_pred = self.clf.predict(self.X_test)
-
+    def confusion_matrix(self, y_pred):
         cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
 
         disp = ConfusionMatrixDisplay(confusion_matrix=cfm)
         disp.plot()
         plt.show()
-
-    def f1_score(self):
-        y_pred = self.clf.predict(self.X_test)
-        f1_score(y_true=self.y_test, y_pred=y_pred)
 
     # abstract override
     def test_model(self, isMultilabel: bool):
@@ -94,9 +90,34 @@ class DecisionTreeModel(Model):
             print("Balanced accuracy on test data:", metrics.balanced_accuracy_score(self.y_test, y_pred))
 
         # confusion matrix
-        self.confusion_matrix()
+        self.confusion_matrix(y_pred)
+        self.f1_score(y_pred)
+        self.sensitivity_score(y_pred)
+        self.specificity_score(y_pred)
+        self.precision_recall_fscore_support(y_pred)
 
-        # f1 score
+    def precision_recall_fscore_support(self, y_pred):
+        res = []
+        for l in [0, 1, 2]:
+            prec, recall, _, _ = precision_recall_fscore_support(np.array(self.y_test) == l,
+                                                                 np.array(y_pred) == l,
+                                                                 pos_label=True, average=None)
+            res.append([l, recall[1], recall[0]])
+        res = pd.DataFrame(res, columns=['class', 'sensitivity', 'specificity'])
+        print(res)
+
+    # f1 score
+    def f1_score(self, y_pred):
+        f1score = f1_score(self.y_test, y_pred, average='weighted')  # what does average mean??
+        print('weighted f1_score: ' + str(f1score))
+
+    def sensitivity_score(self, y_pred):
+        sensScore = sensitivity_score(self.y_test, y_pred, average='weighted')
+        print('weighted sensitivity: ' + str(sensScore))
+
+    def specificity_score(self, y_pred):
+        sensScore = specificity_score(self.y_test, y_pred, average='weighted')
+        print('weighted specificity: ' + str(sensScore))
 
     # count amount of labels in prediction and actual amount of labels
     # used for evaluating test/train size
