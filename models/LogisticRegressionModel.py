@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from imblearn import metrics
 from matplotlib import pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, precision_recall_fscore_support
@@ -20,14 +21,15 @@ class LogisticRegressionModel(Model):
 
         # perform one-hot encoding on feature columns column
         X_data = data[options.feature_col]
-        X_one_hot = pd.DataFrame(encoder.fit_transform(X_data[options.feature_col]).toarray())
+        self.X_one_hot = pd.DataFrame(encoder.fit_transform(X_data[options.feature_col]).toarray())
 
-        X = X_one_hot  # Features as one hot
-        y = data[options.target_col]
+        self.X = self.X_one_hot  # Features as one hot
+        self.y = data[options.target_col]
 
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, train_size=options.train_size,
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y,
+                                                                                train_size=options.train_size,
                                                                                 random_state=options.random_state,
-                                                                                stratify=y)
+                                                                                stratify=self.y)
 
         self.clf = LogisticRegression(random_state=options.random_state, class_weight=options.class_weight)
 
@@ -45,6 +47,7 @@ class LogisticRegressionModel(Model):
         y_pred = self.clf.predict(self.X_test)
         self.confusion_matrix(y_pred)
         self.precision_recall_fscore_support(y_pred)
+        self.plot_train_size(20, 80, 5)
 
     def confusion_matrix(self, y_pred):
         cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
@@ -63,3 +66,29 @@ class LogisticRegressionModel(Model):
             res.append([i, recall[1], recall[0]])
         res = pd.DataFrame(res, columns=['class', 'recall', 'specificity'])
         print(res)
+
+    def plot_train_size(self, min_train_size, max_train_size, step_size):
+        train_accuracy = list()
+        test_accuracy = list()
+
+        for ts in range(min_train_size, max_train_size, step_size):
+            print(ts)
+            X_train, X_test, y_train, y_test = train_test_split(self.X, self.y,
+                                                                train_size=ts/100,
+                                                                random_state=self.options.random_state,
+                                                                stratify=self.y)
+
+            local_clf = LogisticRegression(random_state=self.options.random_state,
+                                           class_weight=self.options.class_weight)
+            local_clf.fit(X_train, y_train)
+
+            train_accuracy.append(local_clf.score(X_train, y_train))
+            test_accuracy.append(local_clf.score(X_test, y_test))
+        print(test_accuracy)
+        fig = plt.figure()
+        ax1 = fig.add_subplot(1, 1, 1)
+
+        ax1.plot(range(min_train_size, max_train_size, step_size), train_accuracy, color='tab:blue')
+        ax1.plot(range(min_train_size, max_train_size, step_size), test_accuracy, color='tab:orange')
+        ax1.set_title('Train vs test accuracy with variable train size')
+        plt.show()
