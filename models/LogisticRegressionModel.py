@@ -47,7 +47,7 @@ class LogisticRegressionModel(Model):
         y_pred = self.clf.predict(self.X_test)
         self.confusion_matrix(y_pred)
         self.precision_recall_fscore_support(y_pred)
-        self.plot_train_size(20, 80, 5)
+        # self.plot_train_size(20, 80, 5)
 
     def confusion_matrix(self, y_pred):
         cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
@@ -84,7 +84,7 @@ class LogisticRegressionModel(Model):
 
             train_accuracy.append(local_clf.score(X_train, y_train))
             test_accuracy.append(local_clf.score(X_test, y_test))
-        print(test_accuracy)
+
         fig = plt.figure()
         ax1 = fig.add_subplot(1, 1, 1)
 

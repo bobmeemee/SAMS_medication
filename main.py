@@ -17,7 +17,7 @@ from utils.utils import loadData, dropIncomplete, columnsToIntegers, countLabels
 
 
 if __name__ == '__main__':
-    options = LogisticRegressionOptions()
+    options = DecisiontreeOptions()
 
     # load and prepare data
     data = loadData(options.col_names)
@@ -34,17 +34,20 @@ if __name__ == '__main__':
     print(data[options.target_col].value_counts())
 
     # build model
-    model = LogisticRegressionModel(data, options)
+    model = DecisionTreeModel(data, options)
+   # model.cross_validate()
 
     # scale model 0-1
     scaler = StandardScaler()
     model.scale_model(scaler)
 
+    model.pruning()
+
     # train model
-    model.train_model()
+    #model.train_model()
 
     # test model accuracy
-    model.test_model(isMultilabel=True)
+    #model.test_model(isMultilabel=True)
 
 
 # only for rfc, maybe to other class?

@@ -6,8 +6,6 @@ class Options:
 
         # data related
 
-        self.class_weight = 'balanced'
-
         self.col_names = ['age', 'sex', 'marital_status', 'occupation', 'education', 'med_prep_by', 'medication',
                           'know_reason', 'know_dosage', 'familiar_timing',
                           'take_regurarly', 'know_med', 'forget_med', 'untroubled_after_dose', 'stop_med_feel_better',
@@ -18,8 +16,7 @@ class Options:
 
         self.notIntegerColumns = ['sex', 'marital_status', 'occupation', 'education', 'med_prep_by']
 
-        self.feature_col = ['age', 'sex', 'marital_status', 'occupation', 'education', 'med_prep_by', 'medication',
-                            'know_reason', 'know_dosage', 'familiar_timing', 'know_med']
+        self.feature_col = ['age', 'sex', 'marital_status', 'occupation', 'education', 'med_prep_by', 'medication']
 
         self.target_col = 'total_score_cat'
 

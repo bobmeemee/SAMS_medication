@@ -7,7 +7,7 @@ class NearestNeighborOptions(Options):
 
         self.train_size = 0.5
 
-        self.n_neighbors = 5
+        self.n_neighbors = 1
         self.radius = 1
         self.algorithm = 'auto'
         self.leaf_size = 30

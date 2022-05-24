@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score, classification_report, \
-    precision_recall_fscore_support
+    precision_recall_fscore_support, roc_curve, RocCurveDisplay
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
@@ -72,6 +72,7 @@ class RandomForestModel(Model):
         print('weighted selectivity: ' + str(self.sensitivity_score(y_pred)))
         print('weighted specifity: ' + str(self.specificity_score(y_pred)))
         self.precision_recall_fscore_support(y_pred)
+        self.plot_roc_curve(y_pred)
         # print(classification_report(self.y_test, y_pred))
 
     def confusion_matrix(self, y_pred):
@@ -100,3 +101,8 @@ class RandomForestModel(Model):
             res.append([l, recall[1], recall[0]])
         res = pd.DataFrame(res, columns=['class', 'sensitivity', 'specificity'])
         print(res)
+
+    def plot_roc_curve(self, y_pred):
+        fpr, tpr, _ = roc_curve(self.y_test, y_pred, pos_label=self.clf.classes_[2])
+        RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
+        plt.show()

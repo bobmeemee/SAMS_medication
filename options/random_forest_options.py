@@ -13,9 +13,11 @@ class RandomForestOptions(Options):
 
         # hyperparameters
         self.criterion = "gini"
-        self.n_estimators = 1000
+        self.n_estimators = 500
         self.max_depth = 6
         self.max_features = "auto"
         self.random_state = None
         self.min_samples_split = None
         self.min_samples_leaf = None
+        self.class_weight = None
+

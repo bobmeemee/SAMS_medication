@@ -8,8 +8,10 @@ from IPython.display import Image
 from imblearn.metrics import sensitivity_score, specificity_score
 
 from sklearn import metrics
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score, precision_recall_fscore_support
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score, precision_recall_fscore_support, \
+    roc_curve, RocCurveDisplay
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 
 from models.Model import Model
@@ -32,23 +34,65 @@ class DecisionTreeModel(Model):
         super().__init__(data)
         self.options = options
 
-    #    X, y = make_imbalance(
-    #        data[options.feature_col],
-    #        data[options.target_col],
-    #        sampling_strategy={0: 25, 1: 50, 2: 50},
-    #        random_state=options.random_state,
-    #    )
-        X = data[options.feature_col]  # Features
-        y = data[options.target_col]
+        #    X, y = make_imbalance(
+        #        data[options.feature_col],
+        #        data[options.target_col],
+        #        sampling_strategy={0: 25, 1: 50, 2: 50},
+        #        random_state=options.random_state,
+        #    )
+        self.X = data[options.feature_col]  # Features
+        self.y = data[options.target_col]
 
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, train_size=options.train_size,
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y,
+                                                                                train_size=options.train_size,
                                                                                 random_state=options.random_state,
-                                                                                stratify=y)
+                                                                                stratify=self.y)
         # Create Decision Tree classifer object
         # https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
         self.clf = DecisionTreeClassifier(criterion=self.options.criterion, max_depth=self.options.max_depth,
                                           max_features=self.options.max_features, splitter=self.options.splitter,
                                           random_state=options.random_state, class_weight=self.options.class_weight)
+
+    def cross_validate(self):
+        scaler = StandardScaler()
+        scaler.fit(self.X)
+        X = scaler.transform(self.X)
+        cvs = cross_val_score(self.clf, X, self.y, cv=5)
+        print(cvs)
+
+    def pruning(self):
+        clf = DecisionTreeClassifier(random_state=self.options.random_state)
+        path = clf.cost_complexity_pruning_path(self.X_train, self.y_train)
+
+        # ccp_alphas: alfas waar tree verandert (Tree score = SSR)
+
+        ccp_alphas, impurities = path.ccp_alphas, path.impurities
+        fig, ax = plt.subplots()
+        ax.plot(ccp_alphas[:-1], impurities[:-1], marker="o", drawstyle="steps-post")
+        ax.set_xlabel("effective alpha")
+        ax.set_ylabel("total impurity of leaves")
+        ax.set_title("Total Impurity vs effective alpha for training set")
+        plt.show()
+
+        # train trees with these alphas
+        clfs = []
+        for ccp_alpha in ccp_alphas:
+            clf = DecisionTreeClassifier(random_state=0, ccp_alpha=ccp_alpha)
+            clf.fit(self.X_train, self.y_train)
+            clfs.append(clf)
+
+        # look for best alpha
+        train_scores = [clf.score(self.X_train, self.y_train) for clf in clfs]
+        test_scores = [clf.score(self.X_test, self.y_test) for clf in clfs]
+
+        fig, ax = plt.subplots()
+        ax.set_xlabel("alpha")
+        ax.set_ylabel("accuracy")
+        ax.set_title("Accuracy vs alpha for training and testing sets")
+        ax.plot(ccp_alphas, train_scores, marker="o", label="train", drawstyle="steps-post")
+        ax.plot(ccp_alphas, test_scores, marker="o", label="test", drawstyle="steps-post")
+        ax.legend()
+        plt.show()
 
     # abstract override
     def scale_model(self, scaler):
@@ -95,6 +139,7 @@ class DecisionTreeModel(Model):
         self.sensitivity_score(y_pred)
         self.specificity_score(y_pred)
         self.precision_recall_fscore_support(y_pred)
+        self.plot_roc_curve(y_pred)
 
     def precision_recall_fscore_support(self, y_pred):
         res = []
@@ -174,3 +219,9 @@ class DecisionTreeModel(Model):
             ax2.set_title('Train vs test balanced accuracy with variable depth')
 
             plt.show()
+
+    def plot_roc_curve(self, y_pred):
+        fpr, tpr, _ = roc_curve(self.y_test, y_pred, pos_label=self.clf.classes_[2])
+        RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
+        plt.show()
+

@@ -6,7 +6,7 @@ class DecisiontreeOptions(Options):
         super().__init__()
 
         # data options
-        self.train_size = 0.5
+        self.train_size = 0.4
 
         # hyperparameters
         self.criterion = "entropy"
@@ -16,9 +16,8 @@ class DecisiontreeOptions(Options):
         self.min_samples_split = None
         self.min_samples_leaf = None
         self.ccp_alpha = None
+        self.class_weight = None
 
-    def increase_train_size(self, amount):
-        self.train_size += amount
 
     def set_train_size(self, train_size):
         self.train_size = train_size
