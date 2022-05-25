@@ -1,4 +1,5 @@
 from random import seed, randint
+from statistics import mean, stdev
 
 import pydotplus
 import matplotlib.pyplot as plt
@@ -205,11 +206,15 @@ class DecisionTreeModel(Model):
 
     def calc_mean_std(self, it):
         totalres = [0, 0, 0]
+        sens = {0: [], 1: [], 2: []}
+        spec = {0: [], 1: [], 2: []}
         y_pred = list()
+        seed(2)
         for i in range(it):
-            seed(2)
+
             self.options.set_random_state(randint(0, 999))
             X_train, X_test, y_train, y_test = train_test_split(self.X, self.y,
+                                                                random_state=self.options.random_state,
                                                                 train_size=self.options.train_size,
                                                                 stratify=self.y)
 
@@ -220,15 +225,18 @@ class DecisionTreeModel(Model):
             y_pred.append(clf.predict(X_test))
             res = []
             for l in [0, 1, 2]:
-                prec, recall, _, _ = precision_recall_fscore_support(np.array(y_test) == l,
-                                                                     np.array(y_pred[i]) == l,
-                                                                     pos_label=True, average=None)
+                prec, recall, fscore, support = precision_recall_fscore_support(np.array(y_test) == l,
+                                                                                np.array(y_pred[i]) == l,
+                                                                                pos_label=True, average=None)
+                sens[l].append(recall[1])
+                spec[l].append(recall[0])
                 res.append([l, recall[1], recall[0]])
             totalres = np.add(totalres, res)
         totalres = np.divide(totalres, it)
         totalres = pd.DataFrame(totalres, columns=['class', 'sensitivity', 'specificity'])
         print(totalres)
-
+        print(mean(sens[0]))
+        print(stdev(sens[0]))
 
     # plot graph depth - train/test accuracy
     def plot_depth(self, max_depth, isMultilabel):
