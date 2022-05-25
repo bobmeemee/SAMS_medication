@@ -1,3 +1,5 @@
+from random import seed, randint
+
 import pydotplus
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -8,6 +10,10 @@ from IPython.display import Image
 from imblearn.metrics import sensitivity_score, specificity_score
 
 from sklearn import metrics
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
+from sklearn import decomposition, datasets
+
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score, precision_recall_fscore_support, \
     roc_curve, RocCurveDisplay
 from sklearn.model_selection import train_test_split, cross_val_score
@@ -53,15 +59,14 @@ class DecisionTreeModel(Model):
                                           max_features=self.options.max_features, splitter=self.options.splitter,
                                           random_state=options.random_state, class_weight=self.options.class_weight)
 
-    def cross_validate(self):
-        scaler = StandardScaler()
-        scaler.fit(self.X)
-        X = scaler.transform(self.X)
-        cvs = cross_val_score(self.clf, X, self.y, cv=5)
+    def cross_validate(self, folds):
+        cvs = cross_val_score(self.clf, self.X, self.y, cv=folds)
         print(cvs)
 
+    # ccp_alpha unbalanced: 0.0175
+    # ccp_alpha balanced: 0
     def pruning(self):
-        clf = DecisionTreeClassifier(random_state=self.options.random_state)
+        clf = DecisionTreeClassifier(random_state=self.options.random_state, class_weight=self.options.class_weight)
         path = clf.cost_complexity_pruning_path(self.X_train, self.y_train)
 
         # ccp_alphas: alfas waar tree verandert (Tree score = SSR)
@@ -74,10 +79,10 @@ class DecisionTreeModel(Model):
         ax.set_title("Total Impurity vs effective alpha for training set")
         plt.show()
 
-        # train trees with these alphas
+        # train trees with these alphas, max test= 0.0175
         clfs = []
         for ccp_alpha in ccp_alphas:
-            clf = DecisionTreeClassifier(random_state=0, ccp_alpha=ccp_alpha)
+            clf = DecisionTreeClassifier(random_state=0, ccp_alpha=ccp_alpha, class_weight=self.options.class_weight)
             clf.fit(self.X_train, self.y_train)
             clfs.append(clf)
 
@@ -93,6 +98,27 @@ class DecisionTreeModel(Model):
         ax.plot(ccp_alphas, test_scores, marker="o", label="test", drawstyle="steps-post")
         ax.legend()
         plt.show()
+
+    # not finished
+    def gridsearch(self):
+        scaler = StandardScaler()
+        clf = DecisionTreeClassifier(class_weight=self.options.class_weight)
+
+        pipe = Pipeline(steps=[('std_slc', scaler),
+                               ('dec_tree', clf)])
+
+        criterion = ['entropy', 'gini']
+        max_depth = [2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 50]
+
+        parameters = dict(dec_tree__criterion=criterion,
+                          dec_tree__max_depth=max_depth)
+
+        clf_GS = GridSearchCV(pipe, parameters)
+        clf_GS.fit(self.X, self.y)
+
+        print('Best Criterion:', clf_GS.best_estimator_.get_params()['dec_tree__criterion'])
+        print('Best max_depth:', clf_GS.best_estimator_.get_params()['dec_tree__max_depth'])
+        print(clf_GS.best_estimator_.get_params()['dec_tree'])
 
     # abstract override
     def scale_model(self, scaler):
@@ -134,12 +160,13 @@ class DecisionTreeModel(Model):
             print("Balanced accuracy on test data:", metrics.balanced_accuracy_score(self.y_test, y_pred))
 
         # confusion matrix
-        self.confusion_matrix(y_pred)
-        self.f1_score(y_pred)
-        self.sensitivity_score(y_pred)
-        self.specificity_score(y_pred)
-        self.precision_recall_fscore_support(y_pred)
-        self.plot_roc_curve(y_pred)
+        self.calc_mean_std(10)
+        # self.confusion_matrix(y_pred)
+        # self.f1_score(y_pred)
+        # self.sensitivity_score(y_pred)
+        # self.specificity_score(y_pred)
+        # self.precision_recall_fscore_support(y_pred)
+        # self.plot_roc_curve(y_pred)
 
     def precision_recall_fscore_support(self, y_pred):
         res = []
@@ -175,6 +202,33 @@ class DecisionTreeModel(Model):
             print("Number of labels found in prediction model: " + str(len(resultLabels.keys())))
             print("Number of labels in test data: " + str(len(testLabels.keys())))
         return [len(testLabels.keys()), len(resultLabels.keys())]
+
+    def calc_mean_std(self, it):
+        totalres = [0, 0, 0]
+        y_pred = list()
+        for i in range(it):
+            seed(2)
+            self.options.set_random_state(randint(0, 999))
+            X_train, X_test, y_train, y_test = train_test_split(self.X, self.y,
+                                                                train_size=self.options.train_size,
+                                                                stratify=self.y)
+
+            clf = DecisionTreeClassifier(criterion=self.options.criterion, max_depth=self.options.max_depth,
+                                         max_features=self.options.max_features, splitter=self.options.splitter,
+                                         random_state=self.options.random_state, class_weight=self.options.class_weight)
+            clf.fit(X_train, y_train)
+            y_pred.append(clf.predict(X_test))
+            res = []
+            for l in [0, 1, 2]:
+                prec, recall, _, _ = precision_recall_fscore_support(np.array(y_test) == l,
+                                                                     np.array(y_pred[i]) == l,
+                                                                     pos_label=True, average=None)
+                res.append([l, recall[1], recall[0]])
+            totalres = np.add(totalres, res)
+        totalres = np.divide(totalres, it)
+        totalres = pd.DataFrame(totalres, columns=['class', 'sensitivity', 'specificity'])
+        print(totalres)
+
 
     # plot graph depth - train/test accuracy
     def plot_depth(self, max_depth, isMultilabel):
@@ -224,4 +278,3 @@ class DecisionTreeModel(Model):
         fpr, tpr, _ = roc_curve(self.y_test, y_pred, pos_label=self.clf.classes_[2])
         RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
         plt.show()
-

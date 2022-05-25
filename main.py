@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.preprocessing import StandardScaler
 
 from models.DecisionTreeModel import DecisionTreeModel
@@ -15,11 +16,10 @@ from options.random_forest_options import RandomForestOptions
 
 from utils.utils import loadData, dropIncomplete, columnsToIntegers, countLabels
 
-
 if __name__ == '__main__':
     options = DecisiontreeOptions()
 
-    # load and prepare data
+    # load and preprocess
     data = loadData(options.col_names)
     data = dropIncomplete(data)
     data = columnsToIntegers(data, options.notIntegerColumns)
@@ -35,22 +35,23 @@ if __name__ == '__main__':
 
     # build model
     model = DecisionTreeModel(data, options)
-   # model.cross_validate()
+    # model.gridsearch()
+    # model.cross_validate()
 
-    # scale model 0-1
+    # scale model
     scaler = StandardScaler()
     model.scale_model(scaler)
 
-    model.pruning()
+    # model.pruning()
 
     # train model
-    #model.train_model()
+    model.train_model()
 
     # test model accuracy
-    #model.test_model(isMultilabel=True)
+    model.test_model(isMultilabel=True)
 
 
-# only for rfc, maybe to other class?
+# only for dst, maybe to other class?
 def train_size_variable(start, step, stop, d, opt):
     prediction_l = list()
     test_l = list()
