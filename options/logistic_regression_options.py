@@ -8,8 +8,7 @@ class LogisticRegressionOptions(Options):
         # data options
         self.train_size = 0.5
 
-        self.class_weight = None
-
+        self.class_weight = 'balanced'
 
     def set_train_size(self, train_size):
         self.train_size = train_size

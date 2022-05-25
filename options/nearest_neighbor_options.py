@@ -6,6 +6,7 @@ class NearestNeighborOptions(Options):
         super().__init__()
 
         self.train_size = 0.5
+        self.class_weight = 'balanced'
 
         self.n_neighbors = 1
         self.radius = 1

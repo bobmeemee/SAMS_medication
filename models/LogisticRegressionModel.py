@@ -1,3 +1,6 @@
+from random import randint
+from statistics import mean
+
 import numpy as np
 import pandas as pd
 from imblearn import metrics
@@ -47,6 +50,7 @@ class LogisticRegressionModel(Model):
         y_pred = self.clf.predict(self.X_test)
         self.confusion_matrix(y_pred)
         self.precision_recall_fscore_support(y_pred)
+        self.calc_mean_std(10)
         # self.plot_train_size(20, 80, 5)
 
     def confusion_matrix(self, y_pred):
@@ -74,7 +78,7 @@ class LogisticRegressionModel(Model):
         for ts in range(min_train_size, max_train_size, step_size):
             print(ts)
             X_train, X_test, y_train, y_test = train_test_split(self.X, self.y,
-                                                                train_size=ts/100,
+                                                                train_size=ts / 100,
                                                                 random_state=self.options.random_state,
                                                                 stratify=self.y)
 
@@ -92,3 +96,37 @@ class LogisticRegressionModel(Model):
         ax1.plot(range(min_train_size, max_train_size, step_size), test_accuracy, color='tab:orange')
         ax1.set_title('Train vs test accuracy with variable train size')
         plt.show()
+
+    def calc_mean_std(self, it):
+        totalres = [0, 0, 0]
+        sens = {0: [], 1: [], 2: []}
+        spec = {0: [], 1: [], 2: []}
+        y_pred = list()
+        # seed(1) # makes results reproducable
+        for i in range(it):
+            self.options.set_random_state(randint(0, 999))
+
+            X_train, X_test, y_train, y_test = train_test_split(self.X, self.y,
+                                                                random_state=self.options.random_state,
+                                                                train_size=self.options.train_size,
+                                                                stratify=self.y)
+
+            clf = LogisticRegression(random_state=self.options.random_state,
+                                     class_weight=self.options.class_weight)
+            clf.fit(X_train, y_train)
+            y_pred.append(clf.predict(X_test))
+
+            res = []
+            for l in [0, 1, 2]:
+                prec, recall, fscore, support = precision_recall_fscore_support(np.array(y_test) == l,
+                                                                                np.array(y_pred[i]) == l,
+                                                                                pos_label=True, average=None)
+                sens[l].append(recall[1])
+                spec[l].append(recall[0])
+                res.append([l, recall[1], recall[0]])
+            totalres = np.add(totalres, res)
+        totalres = np.divide(totalres, it)
+        totalres = pd.DataFrame(totalres, columns=['class', 'sensitivity', 'specificity'])
+        print(totalres)
+        print(mean(sens[0]))
+        print(mean(spec[0]))

@@ -1,3 +1,6 @@
+from random import randint, seed
+from statistics import mean, stdev
+
 import pydotplus
 from matplotlib import pyplot as plt
 import pandas as pd
@@ -20,11 +23,11 @@ class RandomForestModel(Model):
         super().__init__(data)
         self.options = options
 
-        X = data[options.feature_col]  # Features
-        y = data[options.target_col]
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, train_size=options.train_size,
+        self.X = data[options.feature_col]  # Features
+        self.y = data[options.target_col]
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, train_size=options.train_size,
                                                                                 random_state=options.random_state,
-                                                                                stratify=y)
+                                                                                stratify=self.y)
 
         if options.balancedRFC:
             self.clf = BalancedRandomForestClassifier(criterion=self.options.criterion,
@@ -39,12 +42,7 @@ class RandomForestModel(Model):
                                               random_state=self.options.random_state)
 
     def scale_model(self, scaler):
-        scaler.fit(self.X_train)
-        Standardized_X_train = scaler.transform(self.X_train)
-        Standardized_X_test = scaler.transform(self.X_test)
-
-        self.X_train = Standardized_X_train
-        self.X_test = Standardized_X_test
+        pass
 
     def setBalancedRandomForestClassifier(self):
         self.clf = BalancedRandomForestClassifier(criterion=self.options.criterion,
@@ -67,12 +65,13 @@ class RandomForestModel(Model):
 
         score = self.clf.score(self.X_test, self.y_test)
         print("Accuray: " + str(score))
-        self.confusion_matrix(y_pred)
-        print('f1_score: ' + str(self.f1_score(y_pred)))
-        print('weighted selectivity: ' + str(self.sensitivity_score(y_pred)))
-        print('weighted specifity: ' + str(self.specificity_score(y_pred)))
-        self.precision_recall_fscore_support(y_pred)
-        self.plot_roc_curve(y_pred)
+        self.calc_mean_std(10)
+        # self.confusion_matrix(y_pred)
+        # print('f1_score: ' + str(self.f1_score(y_pred)))
+        # print('weighted selectivity: ' + str(self.sensitivity_score(y_pred)))
+        # print('weighted specifity: ' + str(self.specificity_score(y_pred)))
+        # self.precision_recall_fscore_support(y_pred)
+        # self.plot_roc_curve(y_pred)
         # print(classification_report(self.y_test, y_pred))
 
     def confusion_matrix(self, y_pred):
@@ -106,3 +105,37 @@ class RandomForestModel(Model):
         fpr, tpr, _ = roc_curve(self.y_test, y_pred, pos_label=self.clf.classes_[2])
         RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
         plt.show()
+
+    def calc_mean_std(self, it):
+        totalres = [0, 0, 0]
+        sens = {0: [], 1: [], 2: []}
+        spec = {0: [], 1: [], 2: []}
+        y_pred = list()
+        # seed(1) # makes results reproducable
+        for i in range(it):
+            self.options.set_random_state(randint(0, 999))
+
+            X_train, X_test, y_train, y_test = train_test_split(self.X, self.y,
+                                                                random_state=self.options.random_state,
+                                                                train_size=self.options.train_size,
+                                                                stratify=self.y)
+
+            clf = BalancedRandomForestClassifier(criterion=self.options.criterion, max_depth=self.options.max_depth,
+                                                 max_features=self.options.max_features,
+                                                 random_state=self.options.random_state,
+                                                 class_weight=self.options.class_weight)
+            clf.fit(X_train, y_train)
+            y_pred.append(clf.predict(X_test))
+            res = []
+            for l in [0, 1, 2]:
+                prec, recall, fscore, support = precision_recall_fscore_support(np.array(y_test) == l,
+                                                                                np.array(y_pred[i]) == l,
+                                                                                pos_label=True, average=None)
+                sens[l].append(recall[1])
+                spec[l].append(recall[0])
+                res.append([l, recall[1], recall[0]])
+            totalres = np.add(totalres, res)
+        totalres = np.divide(totalres, it)
+        totalres = pd.DataFrame(totalres, columns=['class', 'sensitivity', 'specificity'])
+        print(totalres)
+        print(sens)
