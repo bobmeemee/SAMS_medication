@@ -12,12 +12,12 @@ class RandomForestOptions(Options):
         self.balancedRFC = True  # bool
 
         # hyperparameters
-        self.criterion = "gini"
+        self.criterion = "entropy"
         self.n_estimators = 500
-        self.max_depth = 6
+        self.max_depth = None
         self.max_features = "auto"
         self.random_state = None
         self.min_samples_split = None
         self.min_samples_leaf = None
-        self.class_weight = None
+        self.class_weight = 'balanced'
 

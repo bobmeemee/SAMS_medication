@@ -1,12 +1,12 @@
 from random import randint
-from statistics import mean
+from statistics import mean, stdev
 
 import numpy as np
 import pandas as pd
 from imblearn import metrics
 from matplotlib import pyplot as plt
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, precision_recall_fscore_support
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, precision_recall_fscore_support, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 
@@ -101,7 +101,7 @@ class LogisticRegressionModel(Model):
         totalres = [0, 0, 0]
         sens = {0: [], 1: [], 2: []}
         spec = {0: [], 1: [], 2: []}
-        y_pred = list()
+        accuracy = list()
         # seed(1) # makes results reproducable
         for i in range(it):
             self.options.set_random_state(randint(0, 999))
@@ -114,12 +114,12 @@ class LogisticRegressionModel(Model):
             clf = LogisticRegression(random_state=self.options.random_state,
                                      class_weight=self.options.class_weight)
             clf.fit(X_train, y_train)
-            y_pred.append(clf.predict(X_test))
-
+            y_pred = clf.predict(X_test)
+            accuracy.append(accuracy_score(y_test, y_pred))
             res = []
             for l in [0, 1, 2]:
                 prec, recall, fscore, support = precision_recall_fscore_support(np.array(y_test) == l,
-                                                                                np.array(y_pred[i]) == l,
+                                                                                np.array(y_pred) == l,
                                                                                 pos_label=True, average=None)
                 sens[l].append(recall[1])
                 spec[l].append(recall[0])
@@ -127,6 +127,21 @@ class LogisticRegressionModel(Model):
             totalres = np.add(totalres, res)
         totalres = np.divide(totalres, it)
         totalres = pd.DataFrame(totalres, columns=['class', 'sensitivity', 'specificity'])
+
         print(totalres)
-        print(mean(sens[0]))
-        print(mean(spec[0]))
+        print("Number of iterations: " + str(it))
+
+        print("Mean accuracy: " + str(mean(accuracy)) +
+              "stdev: " + str(stdev(accuracy)) + "\n")
+
+        meanSens = list()
+        for key, value in sens.items():
+            meanSens.append([key, mean(value), stdev(value)])
+        meanSens = pd.DataFrame(meanSens, columns=['class', 'mean sensitivity', 'standard deviation'])
+        print(meanSens)
+
+        meanSpec = list()
+        for key, value in spec.items():
+            meanSpec.append([key, mean(value), stdev(value)])
+        meanSpec = pd.DataFrame(meanSpec, columns=['class', 'mean specificity', 'standard deviation'])
+        print(meanSpec)

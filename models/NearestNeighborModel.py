@@ -5,7 +5,8 @@ import numpy as np
 import pandas as pd
 from imblearn.metrics import sensitivity_score, specificity_score
 from matplotlib import pyplot as plt
-from sklearn.metrics import f1_score, ConfusionMatrixDisplay, confusion_matrix, precision_recall_fscore_support
+from sklearn.metrics import f1_score, ConfusionMatrixDisplay, confusion_matrix, precision_recall_fscore_support, \
+    accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import NearestNeighbors, KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
@@ -92,8 +93,8 @@ class NearestNeighborModel(Model):
         totalres = [0, 0, 0]
         sens = {0: [], 1: [], 2: []}
         spec = {0: [], 1: [], 2: []}
-        y_pred = list()
-        seed(2)
+        accuracy = list()
+        # seed(2)
         for i in range(it):
 
             self.options.set_random_state(randint(0, 999))
@@ -112,14 +113,15 @@ class NearestNeighborModel(Model):
 
             clf = KNeighborsClassifier(n_neighbors=self.options.n_neighbors, metric=self.options.metric,
                                        p=self.options.p,
-                                       n_jobs=self.options.n_jobs)
+                                       n_jobs=self.options.n_jobs, weights='uniform')
             clf.fit(X_train, y_train)
+            y_pred = clf.predict(X_test)
+            accuracy.append(accuracy_score(y_test, y_pred))
 
-            y_pred.append(clf.predict(X_test))
             res = []
             for l in [0, 1, 2]:
                 prec, recall, fscore, support = precision_recall_fscore_support(np.array(y_test) == l,
-                                                                                np.array(y_pred[i]) == l,
+                                                                                np.array(y_pred) == l,
                                                                                 pos_label=True, average=None)
                 sens[l].append(recall[1])
                 spec[l].append(recall[0])
@@ -127,6 +129,21 @@ class NearestNeighborModel(Model):
             totalres = np.add(totalres, res)
         totalres = np.divide(totalres, it)
         totalres = pd.DataFrame(totalres, columns=['class', 'sensitivity', 'specificity'])
+
         print(totalres)
-        print(mean(sens[0]))
-        print(stdev(sens[0]))
+        print("Number of iterations: " + str(it))
+
+        print("Mean accuracy: " + str(mean(accuracy)) +
+              "stdev: " + str(stdev(accuracy)) + "\n")
+
+        meanSens = list()
+        for key, value in sens.items():
+            meanSens.append([key, mean(value), stdev(value)])
+        meanSens = pd.DataFrame(meanSens, columns=['class', 'mean sensitivity', 'standard deviation'])
+        print(meanSens)
+
+        meanSpec = list()
+        for key, value in spec.items():
+            meanSpec.append([key, mean(value), stdev(value)])
+        meanSpec = pd.DataFrame(meanSpec, columns=['class', 'mean specificity', 'standard deviation'])
+        print(meanSpec)
