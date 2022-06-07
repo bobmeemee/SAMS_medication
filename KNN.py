@@ -29,7 +29,7 @@ if __name__ == '__main__':
     model = NearestNeighborModel(data, options)
 
     # scale model
-   # model.scale_model(StandardScaler())
+    # model.scale_model(StandardScaler()) # comment if testing iterations
 
     # train model
     model.train_model()

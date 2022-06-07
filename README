@@ -4,8 +4,9 @@ Models are based on abstract model class:
     train_model(): trains the model
     test_model(): returns various testing values, in the classes themselves can be chosen wich test methods are added
 
-options:
-    contain hyperparameters and data options
+options classes:
+    contain hyperparameters and data options for each model
+    option class itself contains general values used for all models (e.g. random state)
 
 
 Program can be run by changing the model and options in main or by running the file with the same name as the model

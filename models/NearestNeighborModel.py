@@ -115,7 +115,6 @@ class NearestNeighborModel(Model):
             Standardized_X_train = scaler.transform(self.X_train)
             Standardized_X_test = scaler.transform(self.X_test)
 
-            # necessary?
             X_train = Standardized_X_train
             X_test = Standardized_X_test
 
