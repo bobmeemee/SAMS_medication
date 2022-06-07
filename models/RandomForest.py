@@ -75,6 +75,7 @@ class RandomForestModel(Model):
         # self.plot_roc_curve(y_pred)
         # print(classification_report(self.y_test, y_pred))
 
+    # draw cfm of y_pred
     def confusion_matrix(self, y_pred):
         cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
 
@@ -82,16 +83,20 @@ class RandomForestModel(Model):
         disp.plot()
         plt.show()
 
+    # calc weighted f1score of y_pred
     def f1_score(self, y_pred):
         return f1_score(self.y_test, y_pred, average='weighted')  # what does average mean??
 
+    # calc weighted sens score of y_pred
     def sensitivity_score(self, y_pred):
         return sensitivity_score(self.y_test, y_pred, average='weighted')
 
+    # calc weigthed spec score of y_pred
     def specificity_score(self, y_pred):
         return specificity_score(self.y_test, y_pred, average='weighted')
 
     # only works for 3x3
+    # cacl recall & specificity for each label of y_pred
     def precision_recall_fscore_support(self, y_pred):
         res = []
         for l in [0, 1, 2]:
@@ -102,11 +107,13 @@ class RandomForestModel(Model):
         res = pd.DataFrame(res, columns=['class', 'sensitivity', 'specificity'])
         print(res)
 
+    # draw roc curve
     def plot_roc_curve(self, y_pred):
         fpr, tpr, _ = roc_curve(self.y_test, y_pred, pos_label=self.clf.classes_[2])
         RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
         plt.show()
 
+    # calculate mean and stddev for it iterations of model
     def calc_mean_std(self, it):
         totalres = [0, 0, 0]
         sens = {0: [], 1: [], 2: []}

@@ -60,66 +60,7 @@ class DecisionTreeModel(Model):
                                           max_features=self.options.max_features, splitter=self.options.splitter,
                                           random_state=options.random_state, class_weight=self.options.class_weight)
 
-    def cross_validate(self, folds):
-        cvs = cross_val_score(self.clf, self.X, self.y, cv=folds)
-        print(cvs)
 
-    # ccp_alpha unbalanced: 0.0175
-    # ccp_alpha balanced: 0
-    def pruning(self):
-        clf = DecisionTreeClassifier(random_state=self.options.random_state, class_weight=self.options.class_weight)
-        path = clf.cost_complexity_pruning_path(self.X_train, self.y_train)
-
-        # ccp_alphas: alfas waar tree verandert (Tree score = SSR)
-
-        ccp_alphas, impurities = path.ccp_alphas, path.impurities
-        fig, ax = plt.subplots()
-        ax.plot(ccp_alphas[:-1], impurities[:-1], marker="o", drawstyle="steps-post")
-        ax.set_xlabel("effective alpha")
-        ax.set_ylabel("total impurity of leaves")
-        ax.set_title("Total Impurity vs effective alpha for training set")
-        plt.show()
-
-        # train trees with these alphas, max test= 0.0175
-        clfs = []
-        for ccp_alpha in ccp_alphas:
-            clf = DecisionTreeClassifier(random_state=0, ccp_alpha=ccp_alpha, class_weight=self.options.class_weight)
-            clf.fit(self.X_train, self.y_train)
-            clfs.append(clf)
-
-        # look for best alpha
-        train_scores = [clf.score(self.X_train, self.y_train) for clf in clfs]
-        test_scores = [clf.score(self.X_test, self.y_test) for clf in clfs]
-
-        fig, ax = plt.subplots()
-        ax.set_xlabel("alpha")
-        ax.set_ylabel("accuracy")
-        ax.set_title("Accuracy vs alpha for training and testing sets")
-        ax.plot(ccp_alphas, train_scores, marker="o", label="train", drawstyle="steps-post")
-        ax.plot(ccp_alphas, test_scores, marker="o", label="test", drawstyle="steps-post")
-        ax.legend()
-        plt.show()
-
-    # not finished
-    def gridsearch(self):
-        scaler = StandardScaler()
-        clf = DecisionTreeClassifier(class_weight=self.options.class_weight)
-
-        pipe = Pipeline(steps=[('std_slc', scaler),
-                               ('dec_tree', clf)])
-
-        criterion = ['entropy', 'gini']
-        max_depth = [2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 50]
-
-        parameters = dict(dec_tree__criterion=criterion,
-                          dec_tree__max_depth=max_depth)
-
-        clf_GS = GridSearchCV(pipe, parameters)
-        clf_GS.fit(self.X, self.y)
-
-        print('Best Criterion:', clf_GS.best_estimator_.get_params()['dec_tree__criterion'])
-        print('Best max_depth:', clf_GS.best_estimator_.get_params()['dec_tree__max_depth'])
-        print(clf_GS.best_estimator_.get_params()['dec_tree'])
 
     # abstract override
     def scale_model(self, scaler):
@@ -135,13 +76,6 @@ class DecisionTreeModel(Model):
     def train_model(self):
         # Train Decision Tree Classifer
         self.clf = self.clf.fit(self.X_train, self.y_train)
-
-    def confusion_matrix(self, y_pred):
-        cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
-
-        disp = ConfusionMatrixDisplay(confusion_matrix=cfm)
-        disp.plot()
-        plt.show()
 
     # abstract override
     def test_model(self, isMultilabel: bool):
@@ -168,7 +102,18 @@ class DecisionTreeModel(Model):
         # self.specificity_score(y_pred)
         # self.precision_recall_fscore_support(y_pred)
         # self.plot_roc_curve(y_pred)
+        # self.pruning()
+        # self.plot_depth(15, True)
 
+    # draw confusion matrix
+    def confusion_matrix(self, y_pred):
+        cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
+
+        disp = ConfusionMatrixDisplay(confusion_matrix=cfm)
+        disp.plot()
+        plt.show()
+
+    # calculate recall and specificity per class
     def precision_recall_fscore_support(self, y_pred):
         res = []
         for l in [0, 1, 2]:
@@ -184,10 +129,12 @@ class DecisionTreeModel(Model):
         f1score = f1_score(self.y_test, y_pred, average='weighted')  # what does average mean??
         print('weighted f1_score: ' + str(f1score))
 
+    # calculate weighted sensitivity of all classes
     def sensitivity_score(self, y_pred):
         sensScore = sensitivity_score(self.y_test, y_pred, average='weighted')
         print('weighted sensitivity: ' + str(sensScore))
 
+    # calculate weighted specificity of all classes
     def specificity_score(self, y_pred):
         sensScore = specificity_score(self.y_test, y_pred, average='weighted')
         print('weighted specificity: ' + str(sensScore))
@@ -204,6 +151,7 @@ class DecisionTreeModel(Model):
             print("Number of labels in test data: " + str(len(testLabels.keys())))
         return [len(testLabels.keys()), len(resultLabels.keys())]
 
+    # calculate mean value and standard deviation over it amount of iterations
     def calc_mean_std(self, it):
         totalres = [0, 0, 0]
         sens = {0: [], 1: [], 2: []}
@@ -299,7 +247,69 @@ class DecisionTreeModel(Model):
 
             plt.show()
 
+    #plots the roc curve
     def plot_roc_curve(self, y_pred):
         fpr, tpr, _ = roc_curve(self.y_test, y_pred, pos_label=self.clf.classes_[2])
         RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
         plt.show()
+
+    def cross_validate(self, folds):
+        cvs = cross_val_score(self.clf, self.X, self.y, cv=folds)
+        print(cvs)
+
+    # ccp_alpha unbalanced: 0.0175
+    # ccp_alpha balanced: 0
+    def pruning(self):
+        clf = DecisionTreeClassifier(random_state=self.options.random_state, class_weight=self.options.class_weight)
+        path = clf.cost_complexity_pruning_path(self.X_train, self.y_train)
+
+        # ccp_alphas: alfas waar tree verandert (Tree score = SSR)
+
+        ccp_alphas, impurities = path.ccp_alphas, path.impurities
+        fig, ax = plt.subplots()
+        ax.plot(ccp_alphas[:-1], impurities[:-1], marker="o", drawstyle="steps-post")
+        ax.set_xlabel("effective alpha")
+        ax.set_ylabel("total impurity of leaves")
+        ax.set_title("Total Impurity vs effective alpha for training set")
+        plt.show()
+
+        # train trees with these alphas, max test= 0.0175
+        clfs = []
+        for ccp_alpha in ccp_alphas:
+            clf = DecisionTreeClassifier(random_state=0, ccp_alpha=ccp_alpha, class_weight=self.options.class_weight)
+            clf.fit(self.X_train, self.y_train)
+            clfs.append(clf)
+
+        # look for best alpha
+        train_scores = [clf.score(self.X_train, self.y_train) for clf in clfs]
+        test_scores = [clf.score(self.X_test, self.y_test) for clf in clfs]
+
+        fig, ax = plt.subplots()
+        ax.set_xlabel("alpha")
+        ax.set_ylabel("accuracy")
+        ax.set_title("Accuracy vs alpha for training and testing sets")
+        ax.plot(ccp_alphas, train_scores, marker="o", label="train", drawstyle="steps-post")
+        ax.plot(ccp_alphas, test_scores, marker="o", label="test", drawstyle="steps-post")
+        ax.legend()
+        plt.show()
+
+    # not finished
+    def gridsearch(self):
+        scaler = StandardScaler()
+        clf = DecisionTreeClassifier(class_weight=self.options.class_weight)
+
+        pipe = Pipeline(steps=[('std_slc', scaler),
+                               ('dec_tree', clf)])
+
+        criterion = ['entropy', 'gini']
+        max_depth = [2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 50]
+
+        parameters = dict(dec_tree__criterion=criterion,
+                          dec_tree__max_depth=max_depth)
+
+        clf_GS = GridSearchCV(pipe, parameters)
+        clf_GS.fit(self.X, self.y)
+
+        print('Best Criterion:', clf_GS.best_estimator_.get_params()['dec_tree__criterion'])
+        print('Best max_depth:', clf_GS.best_estimator_.get_params()['dec_tree__max_depth'])
+        print(clf_GS.best_estimator_.get_params()['dec_tree'])

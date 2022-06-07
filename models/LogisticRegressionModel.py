@@ -36,7 +36,6 @@ class LogisticRegressionModel(Model):
 
         self.clf = LogisticRegression(random_state=options.random_state, class_weight=options.class_weight)
 
-    # not necessary with logistic regression
     def scale_model(self, scaler):
         pass
 
@@ -53,6 +52,7 @@ class LogisticRegressionModel(Model):
         self.calc_mean_std(10)
         # self.plot_train_size(20, 80, 5)
 
+    # draw confusion matrix of predicted data
     def confusion_matrix(self, y_pred):
         cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
 
@@ -61,6 +61,7 @@ class LogisticRegressionModel(Model):
         disp.plot()
         plt.show()
 
+    # calculate recall & specificity of each label
     def precision_recall_fscore_support(self, y_pred):
         res = []
         for i in [0, 1, 2]:
@@ -71,6 +72,8 @@ class LogisticRegressionModel(Model):
         res = pd.DataFrame(res, columns=['class', 'recall', 'specificity'])
         print(res)
 
+    # plot train-test accuracy with increasing train size
+    # unfinished
     def plot_train_size(self, min_train_size, max_train_size, step_size):
         train_accuracy = list()
         test_accuracy = list()
@@ -97,6 +100,7 @@ class LogisticRegressionModel(Model):
         ax1.set_title('Train vs test accuracy with variable train size')
         plt.show()
 
+    # caclulate mean and standard deviation over it iterations
     def calc_mean_std(self, it):
         totalres = [0, 0, 0]
         sens = {0: [], 1: [], 2: []}

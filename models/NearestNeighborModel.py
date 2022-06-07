@@ -36,7 +36,6 @@ class NearestNeighborModel(Model):
         Standardized_X_train = scaler.transform(self.X_train)
         Standardized_X_test = scaler.transform(self.X_test)
 
-        # necessary?
         self.X_train = Standardized_X_train
         self.X_test = Standardized_X_test
 
@@ -47,6 +46,7 @@ class NearestNeighborModel(Model):
         print("Accuracy: " + str(self.clf.score(self.X_test, self.y_test)))
         y_pred = self.clf.predict(self.X_test)
         self.calc_mean_std(10)
+
         # self.confusion_matrix(y_pred)
         # print('f1_score: ' + str(self.f1_score(y_pred)))
         # print('weighted sensitivity: ' + str(self.sensitivity_score(y_pred)))
@@ -54,6 +54,7 @@ class NearestNeighborModel(Model):
         # self.precision_recall_fscore_support(y_pred)
         # self.test_k()
 
+    # draw cfm of predicted data y_pred
     def confusion_matrix(self, y_pred):
         cfm = confusion_matrix(y_true=self.y_test, y_pred=y_pred)
 
@@ -61,16 +62,20 @@ class NearestNeighborModel(Model):
         disp.plot()
         plt.show()
 
+    # calculate weighted f1score
     def f1_score(self, y_pred):
         return f1_score(self.y_test, y_pred, average='weighted')  # what does average mean??
 
+    # calculate weighted sensitivity
     def sensitivity_score(self, y_pred):
         return sensitivity_score(self.y_test, y_pred, average='weighted')
 
+    # calculate weighted specificity
     def specificity_score(self, y_pred):
         return specificity_score(self.y_test, y_pred, average='weighted')
 
     # only works for 3x3
+    # calc recall and spec for each label
     def precision_recall_fscore_support(self, y_pred):
         res = []
         for l in [0, 1, 2]:
@@ -82,6 +87,7 @@ class NearestNeighborModel(Model):
         print(res)
 
     # scale model has to be done before this function!
+    # recall & specificty for 25 iterations of k
     def test_k(self):
         for k in range(1, 25):
             knn = KNeighborsClassifier(n_neighbors=k, weights='uniform')
@@ -89,6 +95,8 @@ class NearestNeighborModel(Model):
             print(str(k) + ": " + str(knn.score(self.X_test, self.y_test)))
             self.precision_recall_fscore_support(knn.predict(self.X_test))
 
+
+    # calc mean and std dev for it iterations
     def calc_mean_std(self, it):
         totalres = [0, 0, 0]
         sens = {0: [], 1: [], 2: []}

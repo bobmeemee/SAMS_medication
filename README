@@ -1,0 +1,12 @@
+Models are based on abstract model class:
+    constructor takes preprocessed data and options as arguments
+    scale_model(scaler): scales data with scaler as argument
+    train_model(): trains the model
+    test_model(): returns various testing values, in the classes themselves can be chosen wich test methods are added
+
+options:
+    contain hyperparameters and data options
+
+
+Program can be run by changing the model and options in main or by running the file with the same name as the model
+
